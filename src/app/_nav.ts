@@ -34,6 +34,11 @@ export const navItems: INavData[] = [
     icon: 'icon-badge',
   },
   {
+    name: 'Clients',
+    url: '/clients',
+    icon: 'icon-people',
+  },
+  {
     title: true,
     name: 'Theme'
   },

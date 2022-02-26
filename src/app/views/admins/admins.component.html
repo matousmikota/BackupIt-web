@@ -1,231 +1,234 @@
 <div class="animated fadeIn">
-  <div class="col-md-10">
-    <div class="card">
-      <div class="card-header">
-        <strong>New Admin</strong>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <strong>New Admin</strong>
 
-      </div>
-      <div class="card-body"
-           (collapsed)="collapsed($event)"
-           (expanded)="expanded($event)"
-           [collapse]="isCollapsed">
-        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="name"><strong>Name</strong></label>
-            <div class="col-md-9">
-              <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+        </div>
+        <div class="card-body"
+             (collapsed)="collapsed($event)"
+             (expanded)="expanded($event)"
+             [collapse]="isCollapsed">
+          <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="name"><strong>Name</strong></label>
+              <div class="col-md-9">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="login"><strong>Login</strong></label>
-            <div class="col-md-9">
-              <input type="text" id="login" name="login" class="form-control" placeholder="Login">
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="login"><strong>Login</strong></label>
+              <div class="col-md-9">
+                <input type="text" id="login" name="login" class="form-control" placeholder="Login">
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="password-input"><strong>Password</strong></label>
-            <div class="col-md-9">
-              <input type="password" id="password-input" name="password-input" class="form-control" placeholder="Password" autocomplete="current-password">
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="password-input"><strong>Password</strong></label>
+              <div class="col-md-9">
+                <input type="password" id="password-input" name="password-input" class="form-control" placeholder="Password" autocomplete="current-password">
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label"><strong>Send Report Email</strong></label>
-            <div class="col-md-9 col-form-label">
-              <div class="form-check">
-                <div class="row">
-                  <div class="col-md-2">
-                    <input class="form-check-input" type="checkbox" value="send_report_email" id="send_report_email">
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" id="email_cron" name="email_cron" class="form-control" placeholder="Email Cron">
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label"><strong>Send Report Email</strong></label>
+              <div class="col-md-9 col-form-label">
+                <div class="form-check">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <input class="form-check-input" type="checkbox" value="send_report_email" id="send_report_email">
+                    </div>
+                    <div class="col-md-4">
+                      <input type="text" id="email_cron" name="email_cron" class="form-control" placeholder="Email Cron">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
+            </div>
+            <div class="col-md-3">
+              <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn btn-primary"
+                      (click)="isCollapsed = !isCollapsed">Open/Close Form
+              </button>
+            </div>
+
           </div>
-        </form>
+        </div>
       </div>
-      <div class="card-footer">
-        <div class="row">
-          <div class="col-md-2">
-            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-          </div>
-          <div class="col-md-3">
-            <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
-          </div>
-          <div class="col-md-3">
-            <button type="button" class="btn btn-primary"
-                    (click)="isCollapsed = !isCollapsed">Open/Close Form
-            </button>
-          </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">  <!--1. container (card)-->
+        <div class="card-header">
+          <!--<i class="icon-"></i>--><strong>Admins</strong>
+        </div>
+        <div class="card-body"> <!--Tělo 1. containeru (cardu)-->
+          <table class="table table-responsive-sm table-hover table-outline mb-0">  <!--1. TABULKA-->
+            <thead class="thead-light"> <!--Záhlaví tabulky-->
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Send Report Email</th>
+              <th>Email Cron</th>
+              <th><div class="small text-muted">Remove</div></th>
+            </tr>
+            </thead>  <!--Záhlaví tabulky-->
+            <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                <div>
+                  <strong>Jana</strong>
+                </div>
+              </td>
+              <td>
+                <i class="icon-close"></i>
+              </td>
+              <td>
+                <div class="small text-muted">
+                  At 11:00 PM, Monday through Friday
+                </div>
+              <td>
+                <div class="col-md-3">
+                  <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                <div>
+                  <strong>Jakub</strong>
+                </div>
+              </td>
+              <td>
+                <i class="icon-check"></i>
+              </td>
+              <td>
+                <div class="small text-muted">
+                  At 11:00 PM, Monday through Friday
+                </div>
+              <td>
+                <div class="col-md-3">
+                  <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>
+                <div>
+                  <strong>Zuzana</strong>
+                </div>
+              </td>
+              <td>
+                <i class="icon-check"></i>
+              </td>
+              <td>
+                <div class="small text-muted">
+                  At 11:00 PM, Monday through Friday
+                </div>
+              <td>
+                <div class="col-md-3">
+                  <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>
+                <div>
+                  <strong>Klára</strong>
+                </div>
+              </td>
+              <td>
+                <i class="icon-check"></i>
+              </td>
+              <td>
+                <div class="small text-muted">
+                  At 11:00 PM, Monday through Friday
+                </div>
+              <td>
+                <div class="col-md-3">
+                  <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>
+                <div>
+                  <strong>Jan</strong>
+                </div>
+              </td>
+              <td>
+                <i class="icon-check"></i>
+              </td>
+              <td>
+                <div class="small text-muted">
+                  At 11:00 PM, Monday through Friday
+                </div>
+              <td>
+                <div class="col-md-3">
+                  <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>
+                <div>
+                  <strong>Bára</strong>
+                </div>
+              </td>
+              <td>
+                <i class="icon-check"></i>
+              </td>
+              <td>
+                <div class="small text-muted">
+                  At 11:00 PM, Monday through Friday
+                </div>
+              <td>
+                <div class="col-md-3">
+                  <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>
+                <div>
+                  <strong>Oldřich</strong>
+                </div>
+              </td>
+              <td>
+                <i class="icon-close"></i>
+              </td>
+              <td>
+                <div class="small text-muted">
+                  At 11:00 PM, Monday through Friday
+                </div>
+              <td>
+                <div class="col-md-3">
+                  <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>  <!--1. TABULKA-->
+        </div> <!--Tělo 1. containeru (cardu)-->
+        <div class="card-footer"> <!-- zápatí 1. containeru (cardu)-->
 
         </div>
       </div>
     </div>
   </div>
-  <div class="col-md-10">
-    <div class="card">  <!--1. container (card)-->
-      <div class="card-header">
-        <!--<i class="icon-"></i>--><strong>Admins</strong>
-      </div>
-      <div class="card-body"> <!--Tělo 1. containeru (cardu)-->
-        <table class="table table-responsive-sm table-hover table-outline mb-0">  <!--1. TABULKA-->
-          <thead class="thead-light"> <!--Záhlaví tabulky-->
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Send Report Email</th>
-            <th>Email Cron</th>
-            <th><div class="small text-muted">Remove</div></th>
-          </tr>
-          </thead>  <!--Záhlaví tabulky-->
-          <tbody>
-          <tr>
-            <td>1</td>
-            <td>
-              <div>
-                <strong>Jana</strong>
-              </div>
-            </td>
-            <td>
-              <i class="icon-check"></i>
-            </td>
-            <td>
-              <div class="small text-muted">
-                At 11:00 PM, Monday through Friday
-              </div>
-            <td>
-              <div class="col-md-3">
-                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>
-              <div>
-                <strong>Jakub</strong>
-              </div>
-            </td>
-            <td>
-              <i class="icon-check"></i>
-            </td>
-            <td>
-              <div class="small text-muted">
-                At 11:00 PM, Monday through Friday
-              </div>
-            <td>
-              <div class="col-md-3">
-                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>
-              <div>
-                <strong>Zuzana</strong>
-              </div>
-            </td>
-            <td>
-              <i class="icon-check"></i>
-            </td>
-            <td>
-              <div class="small text-muted">
-                At 11:00 PM, Monday through Friday
-              </div>
-            <td>
-              <div class="col-md-3">
-                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>
-              <div>
-                <strong>Klára</strong>
-              </div>
-            </td>
-            <td>
-              <i class="icon-check"></i>
-            </td>
-            <td>
-              <div class="small text-muted">
-                At 11:00 PM, Monday through Friday
-              </div>
-            <td>
-              <div class="col-md-3">
-                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>
-              <div>
-                <strong>Jan</strong>
-              </div>
-            </td>
-            <td>
-              <i class="icon-check"></i>
-            </td>
-            <td>
-              <div class="small text-muted">
-                At 11:00 PM, Monday through Friday
-              </div>
-            <td>
-              <div class="col-md-3">
-                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>
-              <div>
-                <strong>Bára</strong>
-              </div>
-            </td>
-            <td>
-              <i class="icon-check"></i>
-            </td>
-            <td>
-              <div class="small text-muted">
-                At 11:00 PM, Monday through Friday
-              </div>
-            <td>
-              <div class="col-md-3">
-                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>
-              <div>
-                <strong>Oldřich</strong>
-              </div>
-            </td>
-            <td>
-              <i class="icon-check"></i>
-            </td>
-            <td>
-              <div class="small text-muted">
-                At 11:00 PM, Monday through Friday
-              </div>
-            <td>
-              <div class="col-md-3">
-                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-              </div>
-            </td>
-          </tr>
-          </tbody>
-        </table>  <!--1. TABULKA-->
-      </div> <!--Tělo 1. containeru (cardu)-->
-      <div class="card-footer"> <!-- zápatí 1. containeru (cardu)-->
 
-      </div>
-    </div>
-  </div>
 </div>
