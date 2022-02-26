@@ -8,7 +8,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AdminsComponent } from './admins.component';
 // Configs routing
 import { AdminsRoutingModule } from './admins-routing.module';
-
+// import { myApp } from 'angular-cron-gen';
 
 @NgModule({
   imports: [
@@ -18,10 +18,10 @@ import { AdminsRoutingModule } from './admins-routing.module';
     FormsModule,
     ChartsModule,
     BsDropdownModule,
-    ButtonsModule
+    ButtonsModule,
   ],
   declarations: [
-    AdminsComponent
+    AdminsComponent,
   ]
 })
 export class AdminsModule { } //

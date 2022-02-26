@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+// import { myApp } from 'angular-cron-gen';
 @Component({
   templateUrl: 'admins.component.html'
 })
+
+
 export class AdminsComponent {
 
   constructor() { }

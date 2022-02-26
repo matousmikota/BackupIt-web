@@ -4,7 +4,6 @@
       <div class="card">
         <div class="card-header">
           <strong>New Admin</strong>
-
         </div>
         <div class="card-body"
              (collapsed)="collapsed($event)"
@@ -39,6 +38,12 @@
                     </div>
                     <div class="col-md-4">
                       <input type="text" id="email_cron" name="email_cron" class="form-control" placeholder="Email Cron">
+                      <cron-gen ng-model="cronExpression"
+                                options="cronOptions"
+                                template-url="your optional, custom template (Defaults to a bootstrap 3 template)"
+                                cron-format="quartz (Currently only compatible with 'quartz' and defaults to 'quartz')"
+                                ng-disabled="isCronDisabled">
+                      </cron-gen> <!-- TODO: Fix-->
                     </div>
                   </div>
                 </div>
