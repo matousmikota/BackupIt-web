@@ -39,6 +39,11 @@ export const navItems: INavData[] = [
     icon: 'icon-people',
   },
   {
+    name: 'Logs',
+    url: '/logs',
+    icon: 'icon-list',
+  },
+  {
     title: true,
     name: 'Theme'
   },
