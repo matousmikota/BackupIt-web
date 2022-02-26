@@ -12,25 +12,25 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="name"><strong>Name</strong></label>
             <div class="col-md-9">
-              <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name" [value]="name">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="mac_address"><strong>MAC Address</strong></label>
             <div class="col-md-9">
-              <input type="text" id="mac_address" name="mac_address" class="form-control" placeholder="MAC Address">
+              <input type="text" id="mac_address" name="mac_address" class="form-control" placeholder="MAC Address" [value]="mac_address">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="ip_address"><strong>IP Address</strong></label>
             <div class="col-md-9">
-              <input type="text" id="ip_address" name="ip_address" class="form-control" placeholder="IP Address">
+              <input type="text" id="ip_address" name="ip_address" class="form-control" placeholder="IP Address" [value]="ip_address">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="config"><strong>Config</strong></label>
             <div class="col-md-9">
-              <select id="config" name="config" class="form-control"  size="8" multiple>
+              <select id="config" name="config" class="form-control"  size="8" multiple [value]="config">
                 <option value="0">Config</option>
                 <option value="1">Admins</option>
                 <option value="2">ICT_108</option>
@@ -39,7 +39,7 @@
                 <option value="5">KAB_03</option>
                 <option value="6">KAB_04</option>
                 <option value="7">Students</option>
-                <option value="8">Teachers</option>
+                <option value="8">Teachers</option>;
               </select>
             </div>
           </div>
@@ -73,6 +73,7 @@
     <div class="card">  <!--1. container (card)-->
       <div class="card-header">
         <!--<i class="icon-"></i>--><strong>Clients</strong>
+        <button type="button" class="card-header-action btn btn-link btn-minimize"><i class="icon-arrow-up"></i></button>
       </div>
       <div class="card-body overflow-scroll"> <!--Tělo 1. containeru (cardu)-->
         <table class="table table-responsive-sm table-hover table-outline mb-0">  <!--1. TABULKA-->
@@ -87,6 +88,7 @@
             <th>IP Address</th>
             <th>Last Backup</th>
             <th>Activity</th>
+            <th><div class="small text-muted">Edit</div></th>
             <th><div class="small text-muted">Remove</div></th>
           </tr>
           </thead>  <!--Záhlaví tabulky-->
@@ -125,6 +127,11 @@
             </td>
             <td>
               <strong>Online</strong>
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-2DYTNX9', '8A-F3-BA-98-34-9B', '47.158.46.124', 4)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
             </td>
             <td>
               <div class="col-md-3">
@@ -172,6 +179,11 @@
             </td>
             <td>
               <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-52UB7YJ', '42-5C-1F-E4-5D-86', '42.88.220.209', 2)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
+            </td>
+            <td>
+              <div class="col-md-3">
                 <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
               </div>
             </td>
@@ -211,6 +223,11 @@
             <td>
               <!--<div class="small text-muted">Last seen</div>-->
               <strong>Online</strong>
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-VGY0PFO', '9A-CA-88-03-61-43', '160.226.219.15', 6)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
             </td>
             <td>
               <div class="col-md-3">
@@ -259,6 +276,11 @@
             </td>
             <td>
               <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-3FWTVQ2', 'DD-F7-8B-AC-AE-41', '78.234.12.122', 5)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
+            </td>
+            <td>
+              <div class="col-md-3">
                 <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
               </div>
             </td>
@@ -298,6 +320,11 @@
             <td>
               <!--<div class="small text-muted">Last seen</div>-->
               <strong>7 hours ago</strong>
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-VMPKPV8', '2D-A4-84-29-E2-1C', '59.167.89.79', 7)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
             </td>
             <td>
               <div class="col-md-3">
@@ -343,6 +370,11 @@
             </td>
             <td>
               <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-WQ5VE19', '39-55-6E-06-14-1D', '57.240.220.120', 4)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
+            </td>
+            <td>
+              <div class="col-md-3">
                 <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
               </div>
             </td>
@@ -379,6 +411,11 @@
             <td>
               <!--<div class="small text-muted">Last seen</div>-->
               <strong>14.1.2022</strong>
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-8W44VEG', 'D9-4E-2F-C7-FD-8B', '121.43.191.78', 8)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
             </td>
             <td>
               <div class="col-md-3">
@@ -421,6 +458,11 @@
             </td>
             <td>
               <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-8W44VEG', 'D9-4E-2F-C7-FD-8B', '121.43.191.78', 8)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
+            </td>
+            <td>
+              <div class="col-md-3">
                 <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
               </div>
             </td>
@@ -457,6 +499,11 @@
             <td>
               <!--<div class="small text-muted">Last seen</div>-->
               <strong>14.1.2022</strong>
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-8W44VEG', 'D9-4E-2F-C7-FD-8B', '121.43.191.78', 8)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
             </td>
             <td>
               <div class="col-md-3">
@@ -499,6 +546,11 @@
             </td>
             <td>
               <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-8W44VEG', 'D9-4E-2F-C7-FD-8B', '121.43.191.78', 8)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
+            </td>
+            <td>
+              <div class="col-md-3">
                 <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
               </div>
             </td>
@@ -535,6 +587,11 @@
             <td>
               <!--<div class="small text-muted">Last seen</div>-->
               <strong>14.1.2022</strong>
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-8W44VEG', 'D9-4E-2F-C7-FD-8B', '121.43.191.78', 8)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
             </td>
             <td>
               <div class="col-md-3">
@@ -577,6 +634,11 @@
             </td>
             <td>
               <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-8W44VEG', 'D9-4E-2F-C7-FD-8B', '121.43.191.78', 8)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
+            </td>
+            <td>
+              <div class="col-md-3">
                 <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
               </div>
             </td>
@@ -616,6 +678,11 @@
             </td>
             <td>
               <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-8W44VEG', 'D9-4E-2F-C7-FD-8B', '121.43.191.78', 8)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
+            </td>
+            <td>
+              <div class="col-md-3">
                 <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
               </div>
             </td>
@@ -652,6 +719,11 @@
             <td>
               <!--<div class="small text-muted">Last seen</div>-->
               <strong>14.1.2022</strong>
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" (click)="fillInFields('DESKTOP-8W44VEG', 'D9-4E-2F-C7-FD-8B', '121.43.191.78', 8)"  class="btn btn-sm btn-primary"><i class="icon-note"></i></button>
+              </div>
             </td>
             <td>
               <div class="col-md-3">

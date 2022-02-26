@@ -1,610 +1,101 @@
 <div class="animated fadeIn">
-  <div class="col-md-auto">
-    <div class="card">  <!--1. container (card)-->
-    <div class="card-header">
-      <!--<i class="icon-"></i>--><strong>Clients</strong>
+  <div class="row">
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body pb-0">
+          <div class="text-value">82</div>
+          <div><strong>Clients</strong> online right now</div>
+        </div>
+        <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+          <canvas baseChart class="chart"
+                  [datasets]="lineChart1Data"
+                  [labels]="lineChart1Labels"
+                  [options]="lineChart1Options"
+                  [colors]="lineChart1Colours"
+                  [legend]="lineChart1Legend"
+                  [chartType]="lineChart1Type //noinspection ValidateTypes"></canvas>
+        </div>
+      </div>
     </div>
-    <div class="card-body overflow-scroll"> <!--Tělo 1. containeru (cardu)-->
-      <table class="table table-responsive-sm table-hover table-outline mb-0">  <!--1. TABULKA-->
-        <thead class="thead-light"> <!--Záhlaví tabulky-->
-        <tr>
-          <th class="text-center"><i class="icon-user"></i></th>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Configs</th>
-          <!--<th class="text-center">MAC Address</th>-->
-          <th>MAC Address</th>
-          <th>IP Address</th>
-          <th>Last Backup</th>
-          <th>Activity</th>
-          <th><div class="small text-muted">Remove</div></th>
-        </tr>
-        </thead>  <!--Záhlaví tabulky-->
-        <tbody> <!--Seznam Clientů-->
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/5.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <span class="avatar-status badge-success"></span>
-            </div>
-          </td>
-          <td>1</td>
-          <td>
-            <div><strong>DESKTOP-2DYTNX9</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              KAB_03
-            </div>
-            <div class="small text-muted">
-              Teachers
-            </div>
-          </td>
-          <td>
-            <div>
-              8A-F3-BA-98-34-9B
-            </div>
-          </td>
-          <td>
-            <div>
-              47.158.46.124
-            </div>
-          </td>
-          <td>
-            <strong>12 hours ago</strong>
-          </td>
-          <td>
-            <strong>Online</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/4.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <span class="avatar-status badge-success"></span>
-            </div>
-          </td>
-          <td>2</td>
-          <td>
-            <div>
-              <strong>DESKTOP-52UB7YJ</strong>
-            </div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              ICT_114
-            </div>
-            <div class="small text-muted">
-              Teachers
-            </div>
-          </td>
-          <td>
-            <div>
-              42-5C-1F-E4-5D-86
-            </div>
-          </td>
-          <td>
-            <div>
-              42.88.220.209
-            </div>
-          </td>
-          <td>
-            <strong>13 hours ago</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>Online</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <span class="avatar-status badge-success"></span>
-            </div>
-          </td>
-          <td>3</td>
-          <td>
-            <div><strong>DESKTOP-VGY0PFO</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              ICT_108
-            </div>
-            <div class="small text-muted">
-              Students
-            </div>
-          </td>
-          <td>
-            <div>
-              9A-CA-88-03-61-43
-            </div>
-          </td>
-          <td>
-            <div>
-              160.226.219.15
-            </div>
-          </td>
-          <td>
-            <strong>18.2.2021</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>Online</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/1.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>4</td>
-          <td>
-            <div><strong>DESKTOP-3FWTVQ2</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              KAB_03
-            </div>
-            <div class="small text-muted">
-              Admins
-            </div>
-            <div class="small text-muted">
-              Teachers
-            </div>
-          </td>
-          <td>
-            <div>
-              DD-F7-8B-AC-AE-41
-            </div>
-          </td>
-          <td>
-            <div>
-              78.234.12.122
-            </div>
-          </td>
-          <td>
-            <strong>20.2.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>10 minutes ago</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/3.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>5</td>
-          <td>
-            <div><strong>DESKTOP-VMPKPV8</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              ICT_211
-            </div>
-            <div class="small text-muted">
-              Students
-            </div>
-          </td>
-          <td>
-            <div>
-              2D-A4-84-29-E2-1C
-            </div>
-          </td>
-          <td>
-            <div>
-              59.167.89.79
-            </div>
-          </td>
-          <td>
-            <strong>30.12.2021</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>7 hours ago</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/8.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>6</td>
-          <td>
-            <div><strong>DESKTOP-WQ5VE19</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              KAB_04
-            </div>
-            <div class="small text-muted">
-              Teachers
-            </div>
-          </td>
-          <td>
-            <div>
-              39-55-6E-06-14-1D
-            </div>
-          </td>
-          <td>
-            <div>
-              57.240.220.120
-            </div>
-          </td>
-          <td>
-            <strong>27.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>30.1.2022</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>7</td>
-          <td>
-            <div><strong>DESKTOP-8W44VEG</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              Admins
-            </div>
-          </td>
-          <td>
-            <div>
-              D9-4E-2F-C7-FD-8B
-            </div>
-          </td>
-          <td>
-            <div>
-              121.43.191.78
-            </div>
-          </td>
-          <td>
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>8</td>
-          <td>
-            <div><strong>DESKTOP-8W44VEG</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              Admins
-            </div>
-          </td>
-          <td>
-            <div>
-              D9-4E-2F-C7-FD-8B
-            </div>
-          </td>
-          <td>
-            <div>
-              121.43.191.78
-            </div>
-          </td>
-          <td>
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>9</td>
-          <td>
-            <div><strong>DESKTOP-8W44VEG</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              Admins
-            </div>
-          </td>
-          <td>
-            <div>
-              D9-4E-2F-C7-FD-8B
-            </div>
-          </td>
-          <td>
-            <div>
-              121.43.191.78
-            </div>
-          </td>
-          <td>
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>10</td>
-          <td>
-            <div><strong>DESKTOP-8W44VEG</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              Admins
-            </div>
-          </td>
-          <td>
-            <div>
-              D9-4E-2F-C7-FD-8B
-            </div>
-          </td>
-          <td>
-            <div>
-              121.43.191.78
-            </div>
-          </td>
-          <td>
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>11</td>
-          <td>
-            <div><strong>DESKTOP-8W44VEG</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              Admins
-            </div>
-          </td>
-          <td>
-            <div>
-              D9-4E-2F-C7-FD-8B
-            </div>
-          </td>
-          <td>
-            <div>
-              121.43.191.78
-            </div>
-          </td>
-          <td>
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>12</td>
-          <td>
-            <div><strong>DESKTOP-8W44VEG</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              Admins
-            </div>
-          </td>
-          <td>
-            <div>
-              D9-4E-2F-C7-FD-8B
-            </div>
-          </td>
-          <td>
-            <div>
-              121.43.191.78
-            </div>
-          </td>
-          <td>
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>13</td>
-          <td>
-            <div><strong>DESKTOP-8W44VEG</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              Admins
-            </div>
-          </td>
-          <td>
-            <div>
-              D9-4E-2F-C7-FD-8B
-            </div>
-          </td>
-          <td>
-            <div>
-              121.43.191.78
-            </div>
-          </td>
-          <td>
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>14</td>
-          <td>
-            <div><strong>DESKTOP-8W44VEG</strong></div>
-          </td>
-          <td>
-            <div class="small text-muted">
-              Admins
-            </div>
-          </td>
-          <td>
-            <div>
-              D9-4E-2F-C7-FD-8B
-            </div>
-          </td>
-          <td>
-            <div>
-              121.43.191.78
-            </div>
-          </td>
-          <td>
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <div class="col-md-3">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-            </div>
-          </td>
-        </tr>
-        </tbody> <!--Seznam Clientů-->
-      </table>  <!--1. TABULKA-->
-      <ul class="pagination mt-2">
-        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-        <li class="page-item active">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">4</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </div> <!--Tělo 1. containeru (cardu)-->
-    <div class="card-footer"> <!-- zápatí 1. containeru (cardu)-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body pb-0">
+          <div class="text-value">32 GB</div>
+          <div><strong>Backed up</strong> this month</div>
+        </div>
+        <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+          <canvas baseChart class="chart"
+                  [datasets]="lineChart2Data"
+                  [labels]="lineChart2Labels"
+                  [options]="lineChart2Options"
+                  [colors]="lineChart2Colours"
+                  [legend]="lineChart2Legend"
+                  [chartType]="lineChart2Type //noinspection ValidateTypes"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body pb-0">
+          <div class="text-value">3</div>
+          <div><strong>Upcoming backups</strong> today</div>
+        </div>
+        <div class="chart-wrapper mt-3 mx-3" style="height:25px;">
+        </div>
+      </div>
+    </div><!--/.row-->
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-5">
+          <h4 class="card-title mb-0">Completed Backups Last Month</h4>
+          <div class="small text-muted">January 2022</div>
+        </div><!--/.col-->
+      </div><!--/.row-->
+      <div class="chart-wrapper" style="height:300px;margin-top:40px;">
+        <canvas baseChart class="chart"
+                [datasets]="mainChartData"
+                [labels]="mainChartLabels"
+                [options]="mainChartOptions"
+                [colors]="mainChartColours"
+                [legend]="mainChartLegend"
+                [chartType]="mainChartType  //noinspection ValidateTypes" ></canvas>
+      </div>
+    </div>
+    <div class="card-footer">
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body pb-0">
+          <div class="text-value">237</div>
+          <div>Total Clients</div>
+        </div>
+        <div class="chart-wrapper mt-3 mx-3" style="height:25px;">
+        </div>
+      </div>
+    </div><!--/.row-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body pb-0">
+          <div class="text-value">8</div>
+          <div>Total Admins</div>
+        </div>
+        <div class="chart-wrapper mt-3 mx-3" style="height:25px;">
+        </div>
+      </div>
+    </div><!--/.row-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body pb-0">
+          <div class="text-value">24</div>
+          <div><strong>Active</strong> Configs</div>
+        </div>
+        <div class="chart-wrapper mt-3 mx-3" style="height:25px;">
+        </div>
+      </div>
+    </div><!--/.row-->
   </div>
-  <!--konec 1. containeru-->
 </div>
