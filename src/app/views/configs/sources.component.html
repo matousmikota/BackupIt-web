@@ -1,281 +1,255 @@
 <div class="animated fadeIn">
-  <div class="card">  <!--1. container (card)-->
-    <div class="card-header">
-      <!--<i class="icon-"></i>--><strong>Clients</strong>
+  <div class="col-md-10">
+    <div class="card">
+      <div class="card-header">
+        <strong>New Source</strong>
+
+      </div>
+      <div class="card-body"
+           (collapsed)="collapsed($event)"
+           (expanded)="expanded($event)"
+           [collapse]="isCollapsed">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="name"><strong>Name</strong></label>
+            <div class="col-md-9">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="path"><strong>Path</strong></label>
+            <div class="col-md-9">
+              <input type="text" id="path" name="path" class="form-control" placeholder="Path">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="config"><strong>Config</strong></label>
+            <div class="col-md-9">
+              <select id="config" name="config" class="form-control">
+                <option value="0">Config</option>
+                <option value="1">Admins</option>
+                <option value="2">ICT_108</option>
+                <option value="3">ICT_114</option>
+                <option value="4">ICT_211</option>
+                <option value="5">KAB_03</option>
+                <option value="6">KAB_04</option>
+                <option value="7">Students</option>
+                <option value="8">Teachers</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="row">
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          </div>
+          <div class="col-md-3">
+            <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-primary"
+                    (click)="isCollapsed = !isCollapsed">Open/Close Form
+            </button>
+          </div>
+
+        </div>
+      </div>
     </div>
-    <div class="card-body"> <!--Tělo 1. containeru (cardu)-->
-      <table class="table table-responsive-sm table-hover table-outline mb-0">  <!--1. TABULKA-->
-        <thead class="thead-light"> <!--Záhlaví tabulky-->
-        <tr>
-          <th class="text-center"><i class="icon-user"></i></th>
-          <th>Name</th>
-          <th>Configs</th>
-          <!--<th class="text-center">MAC Address</th>-->
-          <th>MAC Address</th>
-          <th>IP Address</th>
-          <th>Last Backup</th>
-          <th>Activity</th>
-        </tr>
-        </thead>  <!--Záhlaví tabulky-->
-        <tbody> <!--Seznam Clientů-->
-        <tr> <!-- 5. client-->
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/5.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <span class="avatar-status badge-success"></span>
-            </div>
-          </td>
-          <td>
-            <div><strong>DESKTOP-2DYTNX9</strong></div>
-            <!--<div class="small text-muted">
-              <span>Configs</span> | KAB_03, ICT_211
-            </div>-->
-          </td>
-          <td>
-            <div class="small text-muted">
-              KAB_03, Teachers
-            </div>
-          </td>
-          <td>
-            <div>
-              8A-F3-BA-98-34-9B
-            </div>
-          </td>
-          <td>
-            <div>
-              47.158.46.124
-            </div>
-          </td>
-          <td>
-            <strong>12 hours ago</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>Online</strong>
-          </td>
-        </tr> <!-- 5. client-->
-        <tr> <!-- 4. client-->
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/4.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <span class="avatar-status badge-success"></span>
-            </div>
-          </td>
-          <td>
-            <div><strong>DESKTOP-52UB7YJ</strong></div>
-            <!--<div class="small text-muted">
-              <span>Configs</span> | KAB_03, ICT_211
-            </div>-->
-          </td>
-          <td>
-            <div class="small text-muted">
-              ICT_114, Teachers
-            </div>
-          </td>
-          <td>
-            <div>
-              42-5C-1F-E4-5D-86
-            </div>
-          </td>
-          <td>
-            <div>
-              42.88.220.209
-            </div>
-          </td>
-          <td>
-            <strong>13 hours ago</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>Online</strong>
-          </td>
-        </tr> <!-- 4. client-->
-        <tr> <!-- 7. client-->
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <span class="avatar-status badge-success"></span>
-            </div>
-          </td>
-          <td>
-            <div><strong>DESKTOP-VGY0PFO</strong></div>
-            <!--<div class="small text-muted">
-              <span>Configs</span> | KAB_03, ICT_211
-            </div>-->
-          </td>
-          <td>
-            <div class="small text-muted">
-              ICT_108, Students
-            </div>
-          </td>
-          <td>
-            <div>
-              9A-CA-88-03-61-43
-            </div>
-          </td>
-          <td>
-            <div>
-              160.226.219.15
-            </div>
-          </td>
-          <td>
-            <strong>18.2.2021</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>Online</strong>
-          </td>
-        </tr> <!-- 7. client-->
-        <tr> <!-- 1. client-->
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/1.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>
-            <div><strong>DESKTOP-3FWTVQ2</strong></div>
-            <!--<div class="small text-muted">
-              <span>Configs</span> | KAB_03, ICT_211
-            </div>-->
-          </td>
-          <td>
-            <div class="small text-muted">
-              KAB_03, Admins, Teachers
-            </div>
-          </td>
-          <td>
-            <div>
-              DD-F7-8B-AC-AE-41
-            </div>
-          </td>
-          <td>
-            <div>
-              78.234.12.122
-            </div>
-          </td>
-          <td>
-            <strong>20.2.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>10 minutes ago</strong>
-          </td>
-        </tr> <!-- 1. client-->
-        <tr> <!-- 3. client-->
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/3.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>
-            <div><strong>DESKTOP-VMPKPV8</strong></div>
-            <!--<div class="small text-muted">
-              <span>Configs</span> | KAB_03, ICT_211
-            </div>-->
-          </td>
-          <td>
-            <div class="small text-muted">
-              ICT_211, Students
-            </div>
-          </td>
-          <td>
-            <div>
-              2D-A4-84-29-E2-1C
-            </div>
-          </td>
-          <td>
-            <div>
-              59.167.89.79
-            </div>
-          </td>
-          <td>
-            <strong>30.12.2021</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>7 hours ago</strong>
-          </td>
-        </tr> <!-- 3. client-->
-        <tr> <!-- 6. client-->
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/8.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>
-            <div><strong>DESKTOP-WQ5VE19</strong></div>
-            <!--<div class="small text-muted">
-              <span>Configs</span> | KAB_03, ICT_211
-            </div>-->
-          </td>
-          <td>
-            <div class="small text-muted">
-              KAB_04, Teachers
-            </div>
-          </td>
-          <td>
-            <div>
-              39-55-6E-06-14-1D
-            </div>
-          </td>
-          <td>
-            <div>
-              57.240.220.120
-            </div>
-          </td>
-          <td>
-            <strong>27.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>30.1.2022</strong>
-          </td>
-        </tr> <!-- 6. client-->
-        <tr> <!-- 2. client-->
-          <td class="text-center">
-            <div class="avatar">
-              <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-              <!--<span class="avatar-status badge-success"></span>-->
-            </div>
-          </td>
-          <td>
-            <div><strong>DESKTOP-8W44VEG</strong></div>
-            <!--<div class="small text-muted">
-              <span>Configs</span> | KAB_03, ICT_211
-            </div>-->
-          </td>
-          <td>
-            <div class="small text-muted">
-              Admins
-            </div>
-          </td>
-          <td>
-            <div>
-              D9-4E-2F-C7-FD-8B
-            </div>
-          </td>
-          <td>
-            <div>
-              121.43.191.78
-            </div>
-          </td>
-          <td>
-            <strong>14.1.2022</strong>
-          </td>
-          <td>
-            <!--<div class="small text-muted">Last seen</div>-->
-            <strong>14.1.2022</strong>
-          </td>
-        </tr> <!-- 2. client-->
-
-        </tbody> <!--Seznam Clientů-->
-      </table>  <!--1. TABULKA-->
-    </div> <!--Tělo 1. containeru (cardu)-->
-    <div class="card-footer"> <!-- zápatí 1. containeru (cardu)-->
-
-    </div>
-
   </div>
+  <div class="col-md-10">
+    <div class="card">  <!--1. container (card)-->
+      <div class="card-header">
+        <!--<i class="icon-"></i>--><strong>Sources</strong>
+      </div>
+      <div class="card-body"> <!--Tělo 1. containeru (cardu)-->
+        <table class="table table-responsive-sm table-hover table-outline mb-0">  <!--1. TABULKA-->
+          <thead class="thead-light"> <!--Záhlaví tabulky-->
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Path</th>
+            <th>Config ID</th>
+            <th>Config Name</th>
+            <th><div class="small text-muted">Remove</div></th>
+          </tr>
+          </thead>  <!--Záhlaví tabulky-->
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+            </div>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <div>
+                <strong>C:\Program Files</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Program Files
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              <div>
+                <strong>Music</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\Music
+              </div>
+            </td>
+            <td>
+              7
+            </td>
+            <td>
+              Students
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>  <!--1. TABULKA-->
+      </div> <!--Tělo 1. containeru (cardu)-->
+      <div class="card-footer"> <!-- zápatí 1. containeru (cardu)-->
+
+      </div>
+    </div>
+  </div>
+</div>

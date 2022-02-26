@@ -12,7 +12,6 @@ import { DestinationsComponent } from './destinations.component';
 // Configs routing
 import { ConfigsRoutingModule } from './configs-routing.module';
 
-// Angular
 
 @NgModule({
   imports: [
