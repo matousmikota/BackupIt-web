@@ -34,10 +34,211 @@
               </div>
             </div>
           </div>
-          <div class="form-group row"> <!-- TODO add cron expression generator -->
-            <label class="col-md-3 col-form-label" for="cron"><strong>Cron Expression</strong></label>
-            <div class="col-md-9">
-              <input type="cron" id="cron" name="cron" class="form-control" placeholder="Cron Expression">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label"><strong>Config Scheduler</strong></label>
+            <div class="col-md-9 col-form-label">
+              <div class="col-md-auto mb-4">
+                <tabset>
+                  <tab heading="Minutes">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                      <div class="col-md-auto">Every</div>
+                      <div class="col-md-auto">
+                        <input type="text" id="minute1" name="minute1" class="form-control" placeholder="minute(s)">
+                      </div>
+                      <div class="col-md-auto">
+                        minute(s) on second
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="second1" name="second1" class="form-control" placeholder="second">
+                      </div>
+                    </form>
+                  </tab>
+                  <tab heading="Hourly">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                      <div class="col-md-auto">Every</div>
+                      <div class="col-md-auto">
+                        <input type="text" id="hour2" name="minute2" class="form-control" placeholder="hours(s)">
+                      </div>
+                      <div class="col-md-auto">
+                        hour(s) on minute
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="minute2" name="minute2" class="form-control" placeholder="minute">
+                      </div>
+                      <div class="col-md-auto">
+                        and second
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="second2" name="second2" class="form-control" placeholder="second">
+                      </div>
+                    </form>
+                  </tab>
+                  <tab heading="Daily">
+                    <div class="form-group row">
+                      <div class="col-md-auto col-form-label">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="radios" id="radio1" value="option1" checked>
+                          <div class="col-md-auto">
+                            <div class="col-md-auto">Every</div>
+                            <div class="col-md-auto">
+                              <input type="text" id="day3" name="day3" class="form-control" placeholder="day(s)">
+                            </div>
+                            <div class="col-md-auto">
+                              days(s) at
+                            </div>
+                            <div class="col-md-auto">
+                              <input type="text" id="hour3" name="hour3" class="form-control" placeholder="hour(s)">
+                            </div>
+                            <div class="col-md-auto">
+                              <input type="text" id="minute3" name="minute3" class="form-control" placeholder="minute(s)">
+                            </div>
+                            <div class="col-md-auto">
+                              <input type="text" id="second3" name="second3" class="form-control" placeholder="second(s)">
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="radios" id="radio2" value="option2" checked>
+                          <div class="col-md-auto">
+                            <div class="col-md-auto">Every week day (Monday through Friday) at</div>
+                            <div class="col-md-auto">
+                              <input type="text" id="weekday3" name="weekday3" class="form-control" placeholder="day(s)">
+                            </div>
+                            <div class="col-md-auto">
+                              days(s) at
+                            </div>
+                            <div class="col-md-auto">
+                              <input type="text" id="weekhours3" name="weekhours3" class="form-control" placeholder="hour(s)">
+                            </div>
+                            <div class="col-md-auto">
+                              <input type="text" id="weekminutes3" name="weekminutes3" class="form-control" placeholder="minute(s)">
+                            </div>
+                            <div class="col-md-auto">
+                              <input type="text" id="weeksecond3" name="weeksecond3" class="form-control" placeholder="second(s)">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    </form>
+                  </tab>
+                  <tab heading="Weekly">
+                    <div class="form-group row">
+                      <div class="col-md-auto col-form-label">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="option1" id="monday4">
+                          <label class="form-check-label" for="monday4">
+                            Monday
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="option1" id="tuesday4">
+                          <label class="form-check-label" for="tuesday4">
+                            Tuesday
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="option1" id="wednesday4">
+                          <label class="form-check-label" for="wednesday4">
+                            Wednesday
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="option1" id="thursday4">
+                          <label class="form-check-label" for="thursday4">
+                            Thursday
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="option1" id="friday4">
+                          <label class="form-check-label" for="friday4">
+                            Friday
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="option1" id="saturday4">
+                          <label class="form-check-label" for="saturday4">
+                            Saturday
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="option1" id="sunday4">
+                          <label class="form-check-label" for="sunday4">
+                            Sunday
+                          </label>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="col-md-auto">
+                        <div class="col-md-auto">Start time</div>
+                        <div class="col-md-auto">
+                          <input type="text" id="hour4" name="hour4" class="form-control" placeholder="hour(s)">
+                        </div>
+                        <div class="col-md-auto">
+                          <input type="text" id="minute4" name="minute4" class="form-control" placeholder="minute(s)">
+                        </div>
+                        <div class="col-md-auto">
+                          <input type="text" id="second4" name="second4" class="form-control" placeholder="second(s)">
+                        </div>
+                      </div>
+                    </div>
+                  </tab>
+                  <tab heading="Monthly">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                      <div class="col-md-auto">Day</div>
+                      <div class="col-md-auto">
+                        <input type="text" id="day5" name="day5" class="form-control" placeholder="day(s)">
+                      </div>
+                      <div class="col-md-auto">
+                        of every
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="month5" name="month5" class="form-control" placeholder="month(s)">
+                      </div>
+                      <div class="col-md-auto">
+                        month(s) at
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="hour5" name="hour5" class="form-control" placeholder="hour(s)">
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="minute5" name="minute5" class="form-control" placeholder="minute(s)">
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="second5" name="second5" class="form-control" placeholder="second(s)">
+                      </div>
+                    </form>
+                  </tab>
+                  <tab heading="Yearly">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                      <div class="col-md-auto">Month</div>
+                      <div class="col-md-auto">
+                        <input type="text" id="month6" name="month6" class="form-control" placeholder="month">
+                      </div>
+                      <div class="col-md-auto">
+                        on the day
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="day6" name="day6" class="form-control" placeholder="day">
+                      </div>
+                      <div class="col-md-auto">
+                        at
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="hour6" name="hour6" class="form-control" placeholder="hour(s)">
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="minute6" name="minute6" class="form-control" placeholder="minute(s)">
+                      </div>
+                      <div class="col-md-auto">
+                        <input type="text" id="second6" name="second6" class="form-control" placeholder="second(s)">
+                      </div>
+                    </form>
+                  </tab>
+                </tabset>
+              </div>
             </div>
           </div>
           <div class="form-group row">

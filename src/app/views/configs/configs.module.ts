@@ -11,6 +11,7 @@ import { DestinationsComponent } from './destinations.component';
 
 // Configs routing
 import { ConfigsRoutingModule } from './configs-routing.module';
+import {TabsModule} from 'ngx-bootstrap/tabs';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ConfigsRoutingModule } from './configs-routing.module';
     FormsModule,
     ChartsModule,
     BsDropdownModule,
-    ButtonsModule
+    ButtonsModule,
+    TabsModule
   ],
   declarations: [
     ConfigsComponent,
