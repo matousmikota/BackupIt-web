@@ -11,9 +11,9 @@ export class DashboardComponent implements OnInit {
 
   //
 
-  htmlVariable: string = '<div>';
+  htmlVariable = '<div>';
 
-  radioModel: string = 'Month';
+  radioModel = 'Month';
 
   // lineChart1
   public lineChart1Data: Array<any> = [

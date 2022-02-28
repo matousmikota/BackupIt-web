@@ -7,7 +7,7 @@ export class LogsComponent {
 
   constructor() { }
 
-  isCollapsed: boolean = false;
+  isCollapsed = false;
 
   collapsed(event: any): void {
     // console.log(event);

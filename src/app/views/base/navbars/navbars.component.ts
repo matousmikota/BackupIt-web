@@ -8,7 +8,7 @@ import {CollapseDirective} from 'ngx-bootstrap/collapse';
 })
 export class NavbarsComponent implements OnInit, AfterViewChecked {
 
-  private _isCollapsed: boolean = false;
+  private _isCollapsed = false;
   set isCollapsed(value) {
     this._isCollapsed = value;
   }
@@ -27,7 +27,7 @@ export class NavbarsComponent implements OnInit, AfterViewChecked {
   collapseRef;
 
   constructor(
-    private renderer: Renderer2,
+    renderer: Renderer2,
   ) { }
 
   ngOnInit(): void  {}

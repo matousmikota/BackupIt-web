@@ -7,10 +7,10 @@ export class ClientsComponent {
 
   constructor() { }
 
-  isCollapsed: boolean = false;
-  name: string = '';
-  mac_address: string = '';
-  ip_address: string = '';
+  isCollapsed = false;
+  name = '';
+  mac_address = '';
+  ip_address = '';
   config: number;
   collapsed(event: any): void {
     // console.log(event);

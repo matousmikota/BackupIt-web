@@ -7,7 +7,7 @@ export class ConfigsComponent {
 
   constructor() { }
 
-  isCollapsed: boolean = true;
+  isCollapsed = true;
 
   collapsed(event: any): void {
     // console.log(event);
