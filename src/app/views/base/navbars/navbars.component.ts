@@ -30,7 +30,7 @@ export class NavbarsComponent implements OnInit, AfterViewChecked {
     private renderer: Renderer2,
   ) { }
 
-  ngOnInit() {}
+  ngOnInit(): void  {}
 
   ngAfterViewChecked (): void {
     this.collapseRef = this.collapse;
