@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private router: Router) {}
+  constructor(router: Router) {}
 
   goToDashboard(): void {
     this.router.navigate([`dashboard`]);

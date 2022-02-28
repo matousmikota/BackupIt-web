@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class DefaultLayoutComponent {
   public sidebarMinimized = false;
   public navItems = navItems;
-  constructor(private router: Router) {}
+  constructor(router: Router) {}
   toggleMinimize(e) {
     this.sidebarMinimized = e;
   }
