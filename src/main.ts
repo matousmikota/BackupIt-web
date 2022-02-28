@@ -12,4 +12,4 @@ platformBrowserDynamic().bootstrapModule(AppModule, {
   useJit: true,
   preserveWhitespaces: true
 })
-  .catch(err => {});
+  .catch(err => console.log(err));
