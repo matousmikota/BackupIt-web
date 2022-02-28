@@ -7,7 +7,6 @@ import { DefaultLayoutComponent } from './containers';
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
 
 export const routes: Routes = [
   {
@@ -37,13 +36,6 @@ export const routes: Routes = [
     }
   },
   {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
-  },
-  {
     path: '',
     component: DefaultLayoutComponent,
     data: {
@@ -55,33 +47,25 @@ export const routes: Routes = [
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
       },
       {
-        path: 'buttons',
-        loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
+        path: 'configs',
+        loadChildren: () => import('./views/configs/configs.module').then(m => m.ConfigsModule)
       },
       {
-        path: 'charts',
-        loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
+        path: 'admins',
+        loadChildren: () => import('./views/admins/admins.module').then(m => m.AdminsModule)
+      },
+      {
+        path: 'clients',
+        loadChildren: () => import('./views/clients/clients.module').then(m => m.ClientsModule)
+      },
+      {
+        path: 'logs',
+        loadChildren: () => import('./views/logs/logs.module').then(m => m.LogsModule)
       },
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
-      {
-        path: 'icons',
-        loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
-      },
-      {
-        path: 'notifications',
-        loadChildren: () => import('./views/notifications/notifications.module').then(m => m.NotificationsModule)
-      },
-      {
-        path: 'theme',
-        loadChildren: () => import('./views/theme/theme.module').then(m => m.ThemeModule)
-      },
-      {
-        path: 'widgets',
-        loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
-      }
     ]
   },
   { path: '**', component: P404Component }

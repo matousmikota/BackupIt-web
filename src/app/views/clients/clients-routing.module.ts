@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { NavbarsComponent } from './navbars/navbars.component';
+import { ClientsComponent } from './clients.component';
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Base'
+      title: 'Clients'
     },
     children: [
       {
         path: '',
-        redirectTo: 'cards'
+        redirectTo: 'clients'
       },
       {
-        path: 'navbars',
-        component: NavbarsComponent,
+        path: 'clients',
+        component: ClientsComponent,
         data: {
-          title: 'Navbars'
+          title: 'Clients'
         }
       }
     ]
@@ -29,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class BaseRoutingModule {}
+export class ClientsRoutingModule {} //

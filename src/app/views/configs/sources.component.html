@@ -1,0 +1,265 @@
+<div class="animated fadeIn">
+  <div class="col-md-10">
+    <div class="card">
+      <div class="card-header">
+        <strong>New Source</strong>
+
+      </div>
+      <div class="card-body"
+           (collapsed)="collapsed($event)"
+           (expanded)="expanded($event)"
+           [collapse]="isCollapsed">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="name"><strong>Name</strong></label>
+            <div class="col-md-9">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="path"><strong>Path</strong></label>
+            <div class="col-md-9">
+              <input type="text" id="path" name="path" class="form-control" placeholder="Path">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="config"><strong>Config</strong></label>
+            <div class="col-md-9">
+              <select id="config" name="config" class="form-control">
+                <option value="0">Config</option>
+                <option value="1">Admins</option>
+                <option value="2">ICT_108</option>
+                <option value="3">ICT_114</option>
+                <option value="4">ICT_211</option>
+                <option value="5">KAB_03</option>
+                <option value="6">KAB_04</option>
+                <option value="7">Students</option>
+                <option value="8">Teachers</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="row">
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          </div>
+          <div class="col-md-3">
+            <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-primary"
+                    (click)="isCollapsed = !isCollapsed">Open/Close Form
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <div class="card">  <!--1. container (card)-->
+      <div class="card-header">
+        <!--<i class="icon-"></i>--><strong>Sources</strong>
+      </div>
+      <div class="card-body"> <!--Tělo 1. containeru (cardu)-->
+        <table class="table table-responsive-sm table-hover table-outline mb-0">  <!--1. TABULKA-->
+          <thead class="thead-light"> <!--Záhlaví tabulky-->
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Path</th>
+            <th>Config ID</th>
+            <th>Config Name</th>
+            <th><div class="small text-muted">Remove</div></th>
+          </tr>
+          </thead>  <!--Záhlaví tabulky-->
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+              <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+            </div>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <div>
+                <strong>C:\Program Files</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Program Files
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              <div>
+                <strong>Music</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\Music
+              </div>
+            </td>
+            <td>
+              7
+            </td>
+            <td>
+              Students
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>
+              <div>
+                <strong>AppData</strong>
+              </div>
+            </td>
+            <td>
+              <div class="small text-muted">
+                C:\Users\%username%\AppData
+              </div>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              ICT_114
+            </td>
+            <td>
+              <div class="col-md-3">
+                <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>  <!--1. TABULKA-->
+        <ul class="pagination mt-2">
+          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div> <!--Tělo 1. containeru (cardu)-->
+      <div class="card-footer"> <!-- zápatí 1. containeru (cardu)-->
+
+      </div>
+    </div>
+  </div>
+</div>
