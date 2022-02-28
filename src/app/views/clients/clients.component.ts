@@ -20,7 +20,7 @@ export class ClientsComponent {
     // console.log(event);
   }
 
-  fillInFields(name: string, mac_address: string, ip_address: string, config: number) {
+  fillInFields(name: string, mac_address: string, ip_address: string, config: number): void  {
     window.scroll(0, 0);
     this.name = name;
     this.mac_address = mac_address;
