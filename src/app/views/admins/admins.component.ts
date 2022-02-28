@@ -9,7 +9,7 @@ export class AdminsComponent {
 
   constructor() { }
 
-  isCollapsed: boolean = false;
+  isCollapsed = false;
 
   collapsed(event: any): void {
     // console.log(event);
