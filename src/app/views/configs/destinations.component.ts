@@ -7,12 +7,12 @@ export class DestinationsComponent {
 
   constructor() { }
 
-  isCollapsedForm1: boolean = false;
-  isCollapsedForm2: boolean = false;
-  isCollapsedForm3: boolean = false;
-  isCollapsedTable1: boolean = true;
-  isCollapsedTable2: boolean = true;
-  isCollapsedTable3: boolean = true;
+  isCollapsedForm1 = false;
+  isCollapsedForm2 = false;
+  isCollapsedForm3 = false;
+  isCollapsedTable1 = true;
+  isCollapsedTable2 = true;
+  isCollapsedTable3 = true;
 
   collapsed(event: any): void {
     // console.log(event);
