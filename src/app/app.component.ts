@@ -12,14 +12,14 @@ import { freeSet } from '@coreui/icons';
 })
 export class AppComponent implements OnInit {
   constructor(
-    router: Router,
-    iconSet: IconSetService
+    private router: Router,
+    public iconSet: IconSetService
   ) {
     // iconSet singleton
     iconSet.icons = { ...freeSet };
   }
 
-  ngOnInit(): void  {
+  ngOnInit() {
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;
