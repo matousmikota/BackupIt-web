@@ -9,6 +9,7 @@ import { AdminsComponent } from './admins.component';
 // Configs routing
 import { AdminsRoutingModule } from './admins-routing.module';
 import {TabsModule} from 'ngx-bootstrap/tabs';
+
 // import { myApp } from 'angular-cron-gen';
 
 @NgModule({
@@ -20,7 +21,7 @@ import {TabsModule} from 'ngx-bootstrap/tabs';
         ChartsModule,
         BsDropdownModule,
         ButtonsModule,
-        TabsModule,
+        TabsModule
     ],
   declarations: [
     AdminsComponent,

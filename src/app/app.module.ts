@@ -42,6 +42,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 
+
+// import {ClientsComponent} from './views/clients/clients.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import { ChartsModule } from 'ng2-charts';
     TabsModule.forRoot(),
     ChartsModule,
     IconModule,
-    IconSetModule.forRoot(),
+    IconSetModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -73,6 +76,8 @@ import { ChartsModule } from 'ng2-charts';
     },
     IconSetService,
   ],
-  bootstrap: [ AppComponent ]
+  exports: [
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

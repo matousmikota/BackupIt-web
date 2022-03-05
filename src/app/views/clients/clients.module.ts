@@ -6,8 +6,10 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ClientsComponent } from './clients.component';
+// import {ClientsTableComponent} from '../../components/clients-table/clients-table.component';
 // Configs routing
 import { ClientsRoutingModule } from './clients-routing.module';
+import {ClientsTableComponent} from '../../components/clients-table/clients-table.component';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { ClientsRoutingModule } from './clients-routing.module';
     ButtonsModule
   ],
   declarations: [
-    ClientsComponent
+    ClientsComponent,
+    ClientsTableComponent
   ]
 })
 export class ClientsModule { } //
