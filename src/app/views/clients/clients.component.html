@@ -1,68 +1,14 @@
 <div class="animated fadeIn">
-  <div class="col-md-7">
-    <div class="card">
-      <div class="card-header">
-        <strong>New Client</strong>
+  <div class="col-sm-auto col-lg-auto">
+    <div class="card text-white bg-primary">
+      <div class="card-body pb-0">
+        <div class="text-value">237</div>
+        <div><strong>Total </strong>Clients</div>
       </div>
-      <div class="card-body"
-           (collapsed)="collapsed($event)"
-           (expanded)="expanded($event)"
-           [collapse]="isCollapsed">
-        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="name"><strong>Name</strong></label>
-            <div class="col-md-9">
-              <input type="text" id="name" name="name" class="form-control" placeholder="Name" [value]="name">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="mac_address"><strong>MAC Address</strong></label>
-            <div class="col-md-9">
-              <input type="text" id="mac_address" name="mac_address" class="form-control" placeholder="MAC Address" [value]="mac_address">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="ip_address"><strong>IP Address</strong></label>
-            <div class="col-md-9">
-              <input type="text" id="ip_address" name="ip_address" class="form-control" placeholder="IP Address" [value]="ip_address">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="config"><strong>Config</strong></label>
-            <div class="col-md-9">
-              <select id="config" name="config" class="form-control"  size="8" multiple [value]="config">
-                <option value="0">Config</option>
-                <option value="1">Admins</option>
-                <option value="2">ICT_108</option>
-                <option value="3">ICT_114</option>
-                <option value="4">ICT_211</option>
-                <option value="5">KAB_03</option>
-                <option value="6">KAB_04</option>
-                <option value="7">Students</option>
-                <option value="8">Teachers</option>;
-              </select>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="card-footer">
-        <div class="row">
-          <div class="col-md-2">
-            <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
-          </div>
-          <div class="col-md-3">
-            <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
-          </div>
-          <div class="col-md-3">
-            <button type="button" class="btn btn-primary"
-                    (click)="isCollapsed = !isCollapsed">Open/Close Form
-            </button>
-          </div>
-
-        </div>
+      <div class="chart-wrapper mt-3 mx-3" style="height:5px;">
       </div>
     </div>
-  </div>
+  </div><!--/.row-->
   <div class="col-md-auto">
     <div class="card">  <!--1. container (card)-->
       <div class="card-header">

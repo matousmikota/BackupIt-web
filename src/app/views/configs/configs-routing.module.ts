@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SourcesComponent } from './sources.component';
 import {ConfigsComponent} from './configs.component';
 import {DestinationsComponent} from './destinations.component';
+import {ConfigCreatorComponent} from './config-creator';
 
 const routes: Routes = [
   {
@@ -34,6 +35,13 @@ const routes: Routes = [
         component: DestinationsComponent,
         data: {
           title: 'Destinations'
+        }
+      },
+      {
+        path: 'config-creator',
+        component: ConfigCreatorComponent,
+        data: {
+          title: 'Config Creator'
         }
       }
     ]
