@@ -13,24 +13,7 @@ export const navItems: INavData[] = [
   {
     name: 'Configs',
     url: '/configs',
-    icon: 'icon-settings',
-    children: [
-      {
-        name: 'Configs',
-        url: '/configs/configs',
-        icon: 'icon-settings'
-      },
-      {
-        name: 'Sources',
-        url: '/configs/sources',
-        icon: 'icon-cloud-upload'
-      },
-      {
-        name: 'Destinations',
-        url: '/configs/destinations',
-        icon: 'icon-cloud-download'
-      }
-    ]
+    icon: 'icon-wrench',
   },
   {
     name: 'Admins',

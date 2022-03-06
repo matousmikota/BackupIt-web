@@ -63,10 +63,6 @@ export const routes: Routes = [
         loadChildren: () => import('./views/logs/logs.module').then(m => m.LogsModule)
       },
       {
-        path: 'settings',
-        loadChildren: () => import('./views/settings/settings.module').then(m => m.SettingsModule)
-      },
-      {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
       }

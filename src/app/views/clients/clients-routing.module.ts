@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClientsComponent } from './clients.component';
+import {ClientsEditComponent} from './clients-edit.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
         data: {
           title: 'Clients'
         }
+      },
+      {
+        path: 'clients/:id',
+        component: ClientsEditComponent
       }
     ]
   }

@@ -10,7 +10,7 @@ import { ClientsComponent } from './clients.component';
 // Configs routing
 import { ClientsRoutingModule } from './clients-routing.module';
 import {ClientsTableComponent} from '../../components/clients-table/clients-table.component';
-
+import {ClientsEditComponent} from './clients-edit.component';
 
 @NgModule({
   imports: [
@@ -24,7 +24,8 @@ import {ClientsTableComponent} from '../../components/clients-table/clients-tabl
   ],
   declarations: [
     ClientsComponent,
-    ClientsTableComponent
+    ClientsTableComponent,
+    ClientsEditComponent
   ]
 })
 export class ClientsModule { } //
