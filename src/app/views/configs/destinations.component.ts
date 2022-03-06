@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {Destination} from '../../Models/destination';
+import {DestinationsService} from '../../services/destinations-service';
 
 @Component({
   templateUrl: 'destinations.component.html'
 })
-export class DestinationsComponent {
+export class DestinationsComponent implements OnInit {
 
-  constructor() { }
+  public data: Destination[] = [];
 
-  isCollapsedForm1 = false;
-  isCollapsedForm2 = false;
-  isCollapsedForm3 = false;
-  isCollapsedTable1 = true;
-  isCollapsedTable2 = true;
-  isCollapsedTable3 = true;
+  constructor(
+    private router: Router,
+    private service: DestinationsService
+  ) { }
+
+  isCollapsedForm = false;
+  isCollapsedTable = false;
 
   collapsed(event: any): void {
     // console.log(event);
@@ -21,6 +25,15 @@ export class DestinationsComponent {
   expanded(event: any): void {
     // console.log(event);
   }
+
+  ngOnInit(): void {
+    this.data = this.service.findAll();
+  }
+
+  public showDestination(destination: Destination): void {
+    this.router.navigate(['destinations', destination.id]);
+  }
+
 }
 
 

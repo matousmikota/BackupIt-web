@@ -17,6 +17,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {DestinationsCheckboxListComponent} from '../../components/destinations-checkbox-list/destinations-checkbox-list.component';
 import {ConfigsTableComponent} from '../../components/configs-table/configs-table.component';
 import {ConfigsEditComponent} from './configs-edit.component';
+import {DestinationsTableComponent} from '../../components/destinations-table/destinations-table.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {ConfigsEditComponent} from './configs-edit.component';
     ConfigCreatorComponent,
     DestinationsCheckboxListComponent,
     ConfigsTableComponent,
-    ConfigsEditComponent
+    ConfigsEditComponent,
+    DestinationsTableComponent
   ]
 })
 export class ConfigsModule { }

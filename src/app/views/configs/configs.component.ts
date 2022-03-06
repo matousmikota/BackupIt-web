@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Admin} from '../../Models/admin';
 import {Router} from '@angular/router';
 import {ConfigsService} from '../../services/configs-service';
 import {Config} from '../../Models/config';
@@ -13,7 +12,8 @@ export class ConfigsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private service: ConfigsService) { }
+    private service: ConfigsService
+  ) { }
 
   isCollapsed = true;
 
