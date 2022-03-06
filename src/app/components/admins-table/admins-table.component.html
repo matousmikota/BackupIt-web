@@ -1,0 +1,30 @@
+<table class="table table-responsive-sm table-hover table-outline mb-0">
+  <thead class="thead-light">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Send Report Email</th>
+    <th>Email Cron</th>
+    <th><div class="small text-muted">Edit</div></th>
+    <th><div class="small text-muted">Remove</div></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let admin of admins">
+    <td>{{ admin.id }}</td>
+    <td><strong>{{ admin.name }}</strong></td>
+    <td>{{ admin.send_report_email }}</td>
+    <td>{{ admin.email_cron }}</td>
+    <td>
+      <div class="col-md-3">
+        <button type="reset" class="btn btn-sm btn-primary" (click)="adminSelected(admin)"><i class="icon-note"></i></button>
+      </div>
+    </td>
+    <td>
+      <div class="col-md-3">
+        <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

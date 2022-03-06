@@ -1,0 +1,80 @@
+<div class="animated fadeIn">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-auto">
+            <button [routerLink]="['/configs']" type="button" class="btn btn-primary px-4"><i class="icon-arrow-left-circle"></i> Back to configs</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 align-middle">
+    <div class="card">
+      <div class="card-header">
+        <h6>Editing config:</h6>
+        <br>
+        <div class="card">
+          <div class="card-body">
+            <div><strong>ID: </strong>{{config.id}}</div>
+            <div><strong>Name: </strong>{{config.name}}</div>
+            <div><strong>Type: </strong>{{config.type}}</div>
+            <div><strong>Backup cron: </strong>{{config.backup_cron}}</div>
+            <div><strong>Maximum count: </strong>{{config.max_count}}</div>
+            <div><strong>Maximum size: </strong>{{config.max_size}}</div>
+            <div><strong>Archive: </strong>{{config.compress_into_archive}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">ID</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Type</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Backup cron</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Maximum count</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Maximum size</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-md-4">
+                <label class="form-label">Archive</label>
+              </div>
+              <div class="col-md-4">
+                <input class="form-check-input" type="checkbox" value="archive" id="archive">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="row">
+          <div class="col-md-auto">
+            <button type="submit" class="btn btn-sm btn-primary"><i class="icon-note"></i> Save</button>
+          </div>
+          <div class="col-md-auto">
+            <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i> Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

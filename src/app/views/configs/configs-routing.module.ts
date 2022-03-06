@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SourcesComponent } from './sources.component';
 import {ConfigsComponent} from './configs.component';
 import {DestinationsComponent} from './destinations.component';
 import {ConfigCreatorComponent} from './config-creator';
+import {ConfigsEditComponent} from './configs-edit.component';
+import {AdminsEditComponent} from '../admins/admins-edit.component';
 
 const routes: Routes = [
   {
@@ -24,13 +25,6 @@ const routes: Routes = [
         }
       },
       {
-        path: 'sources',
-        component: SourcesComponent,
-        data: {
-          title: 'Sources'
-        }
-      },
-      {
         path: 'destinations',
         component: DestinationsComponent,
         data: {
@@ -43,6 +37,10 @@ const routes: Routes = [
         data: {
           title: 'Config Creator'
         }
+      },
+      {
+        path: ':id',
+        component: ConfigsEditComponent
       }
     ]
   }

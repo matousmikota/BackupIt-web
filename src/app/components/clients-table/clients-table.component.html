@@ -14,7 +14,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let client of clients">
-    <td>{{ client.id}}</td>
+    <td>{{ client.id }}</td>
     <td><strong>{{ client.device_name }}</strong></td>
     <!--td>
       <div class="small text-muted">
@@ -24,10 +24,10 @@
         Teachers
       </div>
     </td-->
-    <td>{{ client.mac_address}}</td>
-    <td>{{ client.ipv4_address}}</td>
-    <td>{{ client.last_backup}}</td>
-    <td>{{ client.last_seen}}</td>
+    <td>{{ client.mac_address }}</td>
+    <td>{{ client.ipv4_address }}</td>
+    <td>{{ client.last_backup }}</td>
+    <td>{{ client.last_seen }}</td>
     <td>
       <div class="col-md-3">
         <button type="reset" class="btn btn-sm btn-primary" (click)="clientSelected(client)"><i class="icon-note"></i></button>

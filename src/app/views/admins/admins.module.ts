@@ -9,6 +9,8 @@ import { AdminsComponent } from './admins.component';
 // Configs routing
 import { AdminsRoutingModule } from './admins-routing.module';
 import {TabsModule} from 'ngx-bootstrap/tabs';
+import {AdminsTableComponent} from '../../components/admins-table/admins-table.component';
+import {AdminsEditComponent} from './admins-edit.component';
 
 // import { myApp } from 'angular-cron-gen';
 
@@ -25,6 +27,8 @@ import {TabsModule} from 'ngx-bootstrap/tabs';
     ],
   declarations: [
     AdminsComponent,
+    AdminsTableComponent,
+    AdminsEditComponent
   ]
 })
 export class AdminsModule { } //

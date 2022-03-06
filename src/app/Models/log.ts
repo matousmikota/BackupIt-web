@@ -1,9 +1,9 @@
-export class Client {
+export class Log {
   public id: number = 0;
-  public device_name: string = '';
-  // public configs: Config[{new Config()}];
-  public mac_address: string = '';
-  public ipv4_address: string = '';
-  public last_backup: Date = new Date();
-  public last_seen: Date = new Date();
+  public client_id: number = 0;
+  public config_id: number = 0;
+  public was_successful: boolean = true;
+  public start: Date = new Date();
+  public end: Date = new Date();
+  public error_code: string = '';
 }
