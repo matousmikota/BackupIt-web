@@ -5,6 +5,7 @@ import {DestinationsComponent} from './destinations.component';
 import {ConfigCreatorComponent} from './config-creator';
 import {ConfigsEditComponent} from './configs-edit.component';
 import {AdminsEditComponent} from '../admins/admins-edit.component';
+import {DestinationsEditComponent} from './destinations-edit.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
         data: {
           title: 'Destinations'
         }
+      },
+      {
+        path: 'destinations/:id',
+        component: DestinationsEditComponent
       },
       {
         path: 'config-creator',

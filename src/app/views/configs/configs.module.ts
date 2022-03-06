@@ -14,10 +14,12 @@ import { ConfigCreatorComponent } from './config-creator';
 import { ConfigsRoutingModule } from './configs-routing.module';
 import {TabsModule} from 'ngx-bootstrap/tabs';
 import {BrowserModule} from '@angular/platform-browser';
+
 import {DestinationsCheckboxListComponent} from '../../components/destinations-checkbox-list/destinations-checkbox-list.component';
 import {ConfigsTableComponent} from '../../components/configs-table/configs-table.component';
 import {ConfigsEditComponent} from './configs-edit.component';
 import {DestinationsTableComponent} from '../../components/destinations-table/destinations-table.component';
+import {DestinationsEditComponent} from './destinations-edit.component';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import {DestinationsTableComponent} from '../../components/destinations-table/de
     DestinationsCheckboxListComponent,
     ConfigsTableComponent,
     ConfigsEditComponent,
-    DestinationsTableComponent
+    DestinationsTableComponent,
+    DestinationsEditComponent
   ]
 })
 export class ConfigsModule { }

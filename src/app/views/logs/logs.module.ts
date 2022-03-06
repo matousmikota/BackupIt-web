@@ -8,6 +8,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { LogsComponent } from './logs.component';
 // Configs routing
 import { LogsRoutingModule } from './logs-routing.module';
+import {LogsEditComponent} from './logs-edit.component';
+import {LogsTableComponent} from '../../components/logs-table/logs-table.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { LogsRoutingModule } from './logs-routing.module';
     ButtonsModule
   ],
   declarations: [
-    LogsComponent
+    LogsComponent,
+    LogsEditComponent,
+    LogsTableComponent
   ]
 })
 export class LogsModule { } //
