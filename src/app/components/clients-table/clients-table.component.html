@@ -8,8 +8,7 @@
     <th>IP Address</th>
     <th>Last Backup</th>
     <th>Last Seen</th>
-    <th><div class="small text-muted">Edit</div></th>
-    <th><div class="small text-muted">Remove</div></th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -26,17 +25,12 @@
     </td-->
     <td>{{ client.mac_address }}</td>
     <td>{{ client.ipv4_address }}</td>
-    <td>{{ client.last_backup }}</td>
+    <!--suppress TypeScriptUnresolvedFunction --> <!-- working as intented -->
+    <td>{{ client.last_backup | date:'dd.MM.yyyy HH:mm' }}</td>
     <td>{{ client.last_seen }}</td>
     <td>
-      <div class="col-md-3">
-        <button type="reset" class="btn btn-sm btn-primary" (click)="clientSelected(client)"><i class="icon-note"></i></button>
-      </div>
-    </td>
-    <td>
-      <div class="col-md-3">
-        <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-      </div>
+      <button type="reset" class="btn btn-sm btn-primary" (click)="clientSelected(client)"><i class="icon-note"></i></button>
+      <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
     </td>
   </tr>
   </tbody>
