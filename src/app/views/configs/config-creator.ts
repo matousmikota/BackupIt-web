@@ -1,10 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormsModule, ReactiveFormsModule, FormArray, FormBuilder, Validators, FormControl} from '@angular/forms';
+import {FormArray, FormBuilder} from '@angular/forms'; // FormsModule, ReactiveFormsModule, Validators, FormControl
 import {Destination} from '../../Models/destination';
 import {Router} from '@angular/router';
-import {ClientsService} from '../../services/clients-service';
 import {DestinationsService} from '../../services/destinations-service';
-import {Client} from '../../Models/client';
 
 @Component({
   templateUrl: 'config-creator.html'

@@ -32,8 +32,11 @@ const routes: Routes = [
         }
       },
       {
-        path: 'configs/destinations/:id',
-        component: DestinationsEditComponent
+        path: 'destinations/:id',
+        component: DestinationsEditComponent,
+        data: {
+          title: 'Edit Destination'
+        }
       },
       {
         path: 'config-creator',

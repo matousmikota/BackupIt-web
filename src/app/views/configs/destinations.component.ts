@@ -31,7 +31,7 @@ export class DestinationsComponent implements OnInit {
   }
 
   public showDestination(destination: Destination): void {
-    this.router.navigate(['destinations', destination.id]);
+    this.router.navigate(['configs/destinations', destination.id]);
   }
 
 }
