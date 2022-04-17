@@ -5,8 +5,8 @@
     <th>Name</th>
     <th>Send Report Email</th>
     <th>Email Cron</th>
-    <th><div class="small text-muted">Edit</div></th>
-    <th><div class="small text-muted">Remove</div></th>
+    <th></th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -15,15 +15,10 @@
     <td><strong>{{ admin.name }}</strong></td>
     <td>{{ admin.send_report_email }}</td>
     <td>{{ admin.email_cron }}</td>
+    <td></td>
     <td>
-      <div class="col-md-3">
-        <button type="reset" class="btn btn-sm btn-primary" (click)="adminSelected(admin)"><i class="icon-note"></i></button>
-      </div>
-    </td>
-    <td>
-      <div class="col-md-3">
-        <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-      </div>
+      <button type="reset" class="btn btn-sm btn-primary" (click)="adminSelected(admin)"><i class="icon-note"></i></button>
+      <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
     </td>
   </tr>
   </tbody>

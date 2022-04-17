@@ -8,8 +8,8 @@
     <th>Maximum Count</th>
     <th>Maximum Size</th>
     <th>Archive</th>
-    <th><div class="small text-muted">Edit</div></th>
-    <th><div class="small text-muted">Remove</div></th>
+    <th></th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -21,15 +21,10 @@
     <td>{{ config.max_count }}</td>
     <td>{{ config.max_size }} MB</td>
     <td>{{ config.compress_into_archive }}</td>
+    <td></td>
     <td>
-      <div class="col-md-3">
         <button type="reset" class="btn btn-sm btn-primary" (click)="configSelected(config)"><i class="icon-note"></i></button>
-      </div>
-    </td>
-    <td>
-      <div class="col-md-3">
         <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
-      </div>
     </td>
   </tr>
   </tbody>
