@@ -28,7 +28,8 @@ export class AdminsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data = this.service.findAll();
+    // this.data = this.service.findAll();
+    this.service.findAll().subscribe(data => this.data = data);
   }
 
   public showAdmin(admin: Admin): void {

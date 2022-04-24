@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import {HttpClientModule} from '@angular/common/http';
 
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
 
@@ -41,9 +42,15 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+import {JwtModule} from '@auth0/angular-jwt';
 
 
 // import {ClientsComponent} from './views/clients/clients.component';
+
+function tokenGetter() {
+  console.log('xxx');
+  return sessionStorage.getItem('token');
+}
 
 @NgModule({
   imports: [
@@ -60,7 +67,13 @@ import { ChartsModule } from 'ng2-charts';
     TabsModule.forRoot(),
     ChartsModule,
     IconModule,
-    IconSetModule.forRoot()
+    IconSetModule.forRoot(),
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      },
+    }),
   ],
   declarations: [
     AppComponent,
