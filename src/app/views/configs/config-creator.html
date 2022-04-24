@@ -29,15 +29,15 @@
                 <label class="col-md-3 col-form-label" for="type"><strong>Type</strong></label>
                 <div class="col-md-9 col-form-label">
                   <div class="form-check form-check-inline mr-1" id="type">
-                    <input class="form-check-input" type="radio" name="inline-radios" id="type1" value="option1">
+                    <input class="form-check-input" type="radio" name="inline-radios" id="type1" value="optiontype1">
                     <label class="form-check-label" for="type1">Full</label>
                   </div>
                   <div class="form-check form-check-inline mr-1">
-                    <input class="form-check-input" type="radio" name="inline-radios" id="type2" value="option2">
+                    <input class="form-check-input" type="radio" name="inline-radios" id="type2" value="optiontype2">
                     <label class="form-check-label" for="type2">Incremental</label>
                   </div>
                   <div class="form-check form-check-inline mr-1">
-                    <input class="form-check-input" type="radio" name="inline-radios" id="type3" value="option3">
+                    <input class="form-check-input" type="radio" name="inline-radios" id="type3" value="optiontype3">
                     <label class="form-check-label" for="type3">Differential</label>
                   </div>
                 </div>
@@ -306,7 +306,7 @@
       <div class="card-footer">
         <div class="row">
           <div class="col-md-2">
-            <button [routerLink]="['/configs/configs']" type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
+            <button [routerLink]="['/configs/configs']" (click)="onSubmit()" type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
           </div>
           <div class="col-md-3">
             <button [routerLink]="['/configs/configs']" type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>

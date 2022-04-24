@@ -20,6 +20,8 @@ import {ConfigsTableComponent} from '../../components/configs-table/configs-tabl
 import {ConfigsEditComponent} from './configs-edit.component';
 import {DestinationsTableComponent} from '../../components/destinations-table/destinations-table.component';
 import {DestinationsEditComponent} from './destinations-edit.component';
+import {ConfigsService} from '../../services/configs-service';
+import {Destination} from '../../Models/destination';
 
 
 @NgModule({
