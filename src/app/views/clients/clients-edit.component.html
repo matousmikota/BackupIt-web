@@ -1,5 +1,5 @@
 <div class="animated fadeIn">
-  <div class="col-md-6">
+  <div>
     <div class="card">
       <div class="card-header">
         <div class="row">
@@ -10,14 +10,13 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6 align-middle">
+  <div class="align-middle">
     <div class="card">
       <div class="card-header">
         <h6>Editing client:</h6>
         <br>
         <div class="card">
           <div class="card-body">
-            <div><strong>ID: </strong>{{client.id}}</div>
             <div><strong>Device name: </strong>{{client.device_name}}</div>
             <div><strong>MAC address: </strong>{{client.mac_address}}</div>
             <div><strong>IP address: </strong>{{client.ipv4_address}}</div>
@@ -26,10 +25,6 @@
       </div>
       <div class="card-body">
         <form>
-          <div class="mb-3">
-            <label class="form-label">ID</label>
-            <input type="text" class="form-control">
-          </div>
           <div class="mb-3">
             <label class="form-label">Device name</label>
             <input type="text" class="form-control">
@@ -45,12 +40,12 @@
         </form>
       </div>
       <div class="card-footer">
-        <div class="row">
+        <div class="row pull-right">
           <div class="col-md-auto">
             <button type="submit" class="btn btn-sm btn-primary"><i class="icon-note"></i> Save</button>
           </div>
           <div class="col-md-auto">
-            <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i> Reset</button>
+            <button type="reset" class="btn btn-sm btn-outline-primary"><i class="icon-close"></i> Reset</button>
           </div>
         </div>
       </div>

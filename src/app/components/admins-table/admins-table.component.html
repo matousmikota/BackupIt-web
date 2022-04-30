@@ -1,7 +1,6 @@
 <table class="table table-responsive-sm table-hover table-outline mb-0">
   <thead class="thead-light">
   <tr>
-    <th>ID</th>
     <th>Name</th>
     <th>Send Report Email</th>
     <th>Email Cron</th>
@@ -11,7 +10,6 @@
   </thead>
   <tbody>
   <tr *ngFor="let admin of admins">
-    <td>{{ admin.id }}</td>
     <td><strong>{{ admin.name }}</strong></td>
     <td>{{ admin.send_report_email }}</td>
     <td>{{ admin.email_cron }}</td>

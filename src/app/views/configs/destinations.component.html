@@ -1,7 +1,7 @@
 <div class="animated fadeIn">
-  <div class="col-md-auto">
-    <div class="row">
-    <div class="col-md-4">
+  <div>
+    <div>
+    <div>
       <div class="card">
         <div class="card-header">
           <strong>New Destination</strong>
@@ -49,14 +49,14 @@
           </form>
         </div>
         <div class="card-footer">
-          <div class="row">
-            <div class="col-md-4">
-              <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <div class="row pull-right">
+            <div class="col-md-auto">
+              <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-dot-circle-o"></i> Submit</button>
             </div>
-            <div class="col-md-4">
-              <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            <div class="col-md-auto">
+              <button type="reset" class="btn btn-outline-primary btn-sm"><i class="fa fa-ban"></i> Reset</button>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-auto">
               <button type="button" class="btn btn-primary"
                       (click)="isCollapsedForm = !isCollapsedForm">Open/Close Form
               </button>
@@ -67,7 +67,7 @@
     </div>
   </div>
   </div>
-  <div class="col-md-10">
+  <div>
     <div class="card">
       <div class="card-header">
         <!--<i class="icon-"></i>--><strong>Destinations</strong>
@@ -89,8 +89,8 @@
         </ul>
       </div> <!--Tělo 1. containeru (cardu)-->
       <div class="card-footer">
-        <div class="row">
-          <div class="col-md-3">
+        <div class="row pull-right">
+          <div class="col-md-auto">
             <button type="button" class="btn btn-primary"
                     (click)="isCollapsedTable = !isCollapsedTable">Open/Close Table
             </button>

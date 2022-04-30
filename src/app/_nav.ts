@@ -11,21 +11,14 @@ export const navItems: INavData[] = [
     name: 'Options'
   },
   {
+    name: 'Destinations',
+    url: '/configs/destinations',
+    icon: 'icon-cloud-download'
+  },
+  {
     name: 'Configs',
-    url: '/configs',
-    icon: 'icon-wrench',
-    children: [
-      {
-        name: 'Configs',
-        url: '/configs/configs',
-        icon: 'icon-wrench'
-      },
-      {
-        name: 'Destinations',
-        url: '/configs/destinations',
-        icon: 'icon-cloud-download'
-      }
-    ]
+    url: '/configs/configs',
+    icon: 'icon-wrench'
   },
   {
     name: 'Admins',
