@@ -16,7 +16,10 @@ export class ConfigsEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.params['id'];
-    this.config = this.service.findById(id);
+    this.service.findById(id).subscribe(config => {
+      this.config = config;
+      // this.form = this.createForm(this.user);
+    });
   }
 
 }

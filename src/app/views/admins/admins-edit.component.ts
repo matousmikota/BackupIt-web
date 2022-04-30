@@ -16,7 +16,9 @@ export class AdminsEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.params['id'];
-    this.admin = this.service.findById(id);
+    this.service.findById(id).subscribe(admin => {
+      this.admin = admin;
+    });
   }
 
 }
