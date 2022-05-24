@@ -1,0 +1,28 @@
+$menu-color: #333;
+
+.cron-editor {
+  background-color: $menu-color;
+  flex: 0 0 250px;
+
+  ul {
+    margin: 10rem;
+    padding: 10rem;
+
+    li {
+      display: block;
+      list-style: none;
+
+      a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 150px;
+        border-bottom: 1px solid lighten($menu-color, 10%);
+
+        &:hover {
+          background-color: lighten($menu-color, 5%);
+        }
+      }
+    }
+  }
+}

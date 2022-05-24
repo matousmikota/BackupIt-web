@@ -3,8 +3,8 @@ import { CronOptions } from 'cron-editor/lib/CronOptions';
 
 @Component({
   selector: 'app-cron-generator',
-  templateUrl: 'cron-generator.component.html'/*,
-  styleUrls: ['./app.component.css']*/
+  templateUrl: 'cron-generator.component.html',
+  styleUrls: ['cron-generator.component.scss']
 })
 export class CronGeneratorComponent {
   public cronExpression = '4 3 2 12 1/1 ? *';
