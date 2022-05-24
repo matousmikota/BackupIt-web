@@ -250,6 +250,11 @@
                 </div>
               </div>
               <div class="form-group row">
+                <label class="col-md-3 col-form-label"><strong>New Config Scheduler</strong></label>
+                <app-cron-generator></app-cron-generator>
+              </div>
+              <!--cron-editor [formControl]="cronForm"></cron-editor-->
+              <div class="form-group row">
                 <label class="col-md-3 col-form-label" for="max_count"><strong>Maximal Count</strong></label>
                 <div class="col-md-3">
                   <input type="cron" id="max_count" name="max_count" class="form-control" placeholder="Maximal Count">

@@ -22,20 +22,24 @@ import {DestinationsTableComponent} from '../../components/destinations-table/de
 import {DestinationsEditComponent} from './destinations-edit.component';
 import {ConfigsService} from '../../services/configs-service';
 import {Destination} from '../../Models/destination';
+// import {CronEditorModule} from 'ngx-cron-editor';
+import { CronEditorModule } from 'cron-editor';
+import { CronGeneratorComponent} from '../../components/cron-generator/cron-generator.component';
 
 
 @NgModule({
-  imports: [
-    CollapseModule,
-    CommonModule,
-    ConfigsRoutingModule,
-    FormsModule,
-    ChartsModule,
-    BsDropdownModule,
-    ButtonsModule,
-    TabsModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        CollapseModule,
+        CommonModule,
+        ConfigsRoutingModule,
+        FormsModule,
+        ChartsModule,
+        BsDropdownModule,
+        ButtonsModule,
+        TabsModule,
+        ReactiveFormsModule,
+        CronEditorModule
+    ],
   declarations: [
     ConfigsComponent,
     SourcesComponent,
@@ -45,7 +49,8 @@ import {Destination} from '../../Models/destination';
     ConfigsTableComponent,
     ConfigsEditComponent,
     DestinationsTableComponent,
-    DestinationsEditComponent
+    DestinationsEditComponent,
+    CronGeneratorComponent
   ]
 })
 export class ConfigsModule { }

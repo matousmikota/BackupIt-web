@@ -9,6 +9,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import {HttpClientModule} from '@angular/common/http';
 
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
+import { CronEditorModule } from 'cron-editor';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -54,6 +55,7 @@ function tokenGetter() {
 
 @NgModule({
   imports: [
+    CronEditorModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

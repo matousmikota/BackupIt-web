@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormArray, FormBuilder} from '@angular/forms'; // FormsModule, ReactiveFormsModule, Validators, FormControl
+import {FormArray, FormBuilder, FormControl} from '@angular/forms'; // FormsModule, ReactiveFormsModule, Validators, FormControl
 import {Destination} from '../../Models/destination';
 import {Router} from '@angular/router';
 import {DestinationsService} from '../../services/destinations-service';
@@ -32,6 +32,7 @@ export class ConfigCreatorComponent implements OnInit {
   });
 
   public data: Destination[] = [];
+  // cronForm: any;
 
   get sources() {
     return this.configForm.get('sources') as FormArray;
@@ -76,6 +77,7 @@ export class ConfigCreatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = this.service.findAll();
+    // this.cronForm = new FormControl('0 0 1/1 * *');
   }
 
   public destinationSelected(destination: Destination): void {
