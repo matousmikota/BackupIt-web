@@ -14,6 +14,8 @@ export class CronGeneratorComponent {
     formSelectClass: 'form-control cron-editor-select',
     formRadioClass: 'cron-editor-radio',
     formCheckboxClass: 'cron-editor-checkbox',
+    // tabSetClass: '',
+    // tabClass: '',
 
     defaultTime: '10:00:00',
     use24HourTime: true,

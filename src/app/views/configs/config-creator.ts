@@ -18,7 +18,7 @@ export class ConfigCreatorComponent implements OnInit {
   @Output()
   public selected: EventEmitter<Destination> = new EventEmitter<Destination>();
 
-  configForm = this.fb.group({
+  public configForm = this.fb.group({
     id: [0],
     name: [''],
     type: [''],
@@ -39,7 +39,7 @@ export class ConfigCreatorComponent implements OnInit {
   }
 
   public config: Config = new Config();
-  public id: number = 103;
+  public id: number = 409;
   public name: string = 'ICT_114';
   public type: string = 'full';
   public backup_cron: string = '20 * * * *';
@@ -63,7 +63,7 @@ export class ConfigCreatorComponent implements OnInit {
     console.warn(this.configForm.value);
     // Object.assign(this.config, this.configForm.value);
     this.config.id = this.id;
-    this.config.name = this.name;
+    this.config.name = this.configForm.value.name;
     this.config.type = this.type;
     this.config.backup_cron = this.backup_cron;
     this.config.max_count = this.max_count;
