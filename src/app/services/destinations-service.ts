@@ -1,5 +1,11 @@
 import {Destination} from '../Models/destination';
 import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {SessionsService} from './sessions.service';
+import {catchError, Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -57,19 +63,48 @@ export class DestinationsService {
     }
   ];
 
-  public findAll(): Destination[] {
-    return this.data;
+
+  constructor(private http: HttpClient,
+              private router: Router,
+              private sessions: SessionsService) { }
+
+  public get options(): { headers: HttpHeaders }  {
+    return {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.sessions.token
+      })
+    };
   }
 
-  public findById(id: number): Destination|null {
-    let item;
-    for (item of this.data) {
-      if (item.id === id) {
-        return item;
-      }
-    }
 
-    return null;
+  public findAll(): Observable<Destination[]> {
+    return this.http.get<Destination[]>(environment.api + '/data/Destinations', this.options).pipe(
+      catchError(err => {
+        this.unauthenticated(err);
+        throw new Error(err);
+      })
+    );
+  }
+
+  public findById(id: number): Observable<Destination> {
+    return this.http.get<Destination>(environment.api + '/data/Destinations/' + id, this.options);
+  }
+
+  public save(destination: Destination): Observable<Destination> {
+    /*if (destination.id) {
+      return this.http.put<Destination>(environment.api + '/data/Destinations/' + destination.id, destination, this.options);
+
+    } else {
+      return this.http.post<Destination>(environment.api + '/data/Destinations/', destination, this.options);
+    }*/
+    return this.http.post<Destination>(environment.api + '/data/Destinations/', destination, this.options);
+  }
+
+  private unauthenticated(err: any): void {
+    if (err.status === 401) {
+      this.sessions.logout();
+      this.router.navigate([ '/login' ]);
+    }
   }
 
 }

@@ -16,7 +16,10 @@ export class DestinationsEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.params['id'];
-    this.destination = this.service.findById(id);
+    this.service.findById(id).subscribe(destination => {
+      this.destination = destination;
+      // this.form = this.createForm(this.user);
+    });
   }
 
 }

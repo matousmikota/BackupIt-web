@@ -39,13 +39,16 @@ export class ConfigCreatorComponent implements OnInit {
   }
 
   public config: Config = new Config();
-  public id: number = 409;
-  public name: string = 'ICT_114';
-  public type: string = 'full';
-  public backup_cron: string = '20 * * * *';
-  public max_count: number = 3;
-  public max_size: number = 4;
-  public compress_into_archive: boolean = false;
+
+  public id: number = 411;
+  /*
+ public name: string = 'ICT_114';
+ public type: string = 'full';
+ public backup_cron: string = '20 * * * *';
+ public max_count: number = 3;
+ public max_size: number = 4;
+ public compress_into_archive: boolean = false;
+*/
 
   constructor(
     private fb: FormBuilder,
@@ -62,12 +65,13 @@ export class ConfigCreatorComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.configForm.value);
     // Object.assign(this.config, this.configForm.value);
-    this.config.id = this.id;
+    this.config.id = Math.random();
     this.config.name = this.configForm.value.name;
-    this.config.type = this.type;
-    this.config.backup_cron = this.backup_cron;
-    this.config.max_count = this.max_count;
-    this.config.compress_into_archive = this.compress_into_archive;
+    this.config.type = this.configForm.value.type;
+    this.config.backup_cron = this.configForm.value.backup_cron;
+    this.config.max_count = this.configForm.value.max_count;
+    this.config.compress_into_archive = this.configForm.value.compress_into_archive;
+    this.config.type = this.configForm.value.type;
     console.warn(this.config);
 
     this.configService.save(this.config).subscribe(user => {
@@ -76,7 +80,7 @@ export class ConfigCreatorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data = this.service.findAll();
+    this.service.findAll().subscribe(data => this.data = data);
     // this.cronForm = new FormControl('0 0 1/1 * *');
   }
 

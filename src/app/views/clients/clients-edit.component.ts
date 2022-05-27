@@ -16,7 +16,10 @@ export class ClientsEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.params['id'];
-    this.client = this.service.findById(id);
+    this.service.findById(id).subscribe(client => {
+      this.client = client;
+      // this.form = this.createForm(this.user);
+    });
   }
 
 }

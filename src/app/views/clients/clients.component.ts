@@ -38,7 +38,7 @@ export class ClientsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data = this.service.findAll();
+    this.service.findAll().subscribe(data => this.data = data);
   }
 
   public showClient(client: Client): void {
