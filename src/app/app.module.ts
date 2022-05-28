@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -10,6 +10,10 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
 import { CronEditorModule } from 'cron-editor';
+
+import { registerLocaleData } from '@angular/common';
+import localeCs from '@angular/common/locales/cs';
+registerLocaleData(localeCs);
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -85,6 +89,7 @@ function tokenGetter() {
     LoginComponent
   ],
   providers: [,
+    {provide: LOCALE_ID, useValue: 'cs-CZ'},
     IconSetService,
   ],
   exports: [

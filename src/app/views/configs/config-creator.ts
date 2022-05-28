@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {DestinationsService} from '../../services/destinations-service';
 import {ConfigsService} from '../../services/configs-service';
 import {Config} from '../../Models/config';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -30,6 +31,9 @@ export class ConfigCreatorComponent implements OnInit {
       this.fb.control('')
     ])
   });
+
+  pipe = new DatePipe('cs-CZ');
+  date = Number(this.pipe.transform(Date.now(), 'MMddHHmmss'));
 
   public data: Destination[] = [];
   // cronForm: any;
@@ -65,7 +69,7 @@ export class ConfigCreatorComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.configForm.value);
     // Object.assign(this.config, this.configForm.value);
-    this.config.id = Math.random();
+    this.config.id = this.date;
     this.config.name = this.configForm.value.name;
     this.config.type = this.configForm.value.type;
     this.config.backup_cron = this.configForm.value.backup_cron;

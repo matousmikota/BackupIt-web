@@ -43,9 +43,9 @@ export class DestinationsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.currentDate);
+    /*console.warn(this.currentDate);
     const array = new Uint32Array(1);
-    self.crypto.getRandomValues(array);
+    self.crypto.getRandomValues(array);*/
     // this.destination.id = array[0];
     this.destination.name = this.destinationForm.value.name;
     this.destination.path = this.destinationForm.value.path;
@@ -56,7 +56,7 @@ export class DestinationsComponent implements OnInit {
     console.warn(this.destination);
 
     this.service.save(this.destination).subscribe(user => {
-      this.router.navigate([ 'configs/configs' ]);
+      this.router.navigate([ 'configs/destinations' ]);
     });
   }
 
