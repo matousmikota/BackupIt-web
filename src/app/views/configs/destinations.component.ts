@@ -46,7 +46,7 @@ export class DestinationsComponent implements OnInit {
     console.warn(this.currentDate);
     const array = new Uint32Array(1);
     self.crypto.getRandomValues(array);
-    this.destination.id = array[0];
+    // this.destination.id = array[0];
     this.destination.name = this.destinationForm.value.name;
     this.destination.path = this.destinationForm.value.path;
     this.destination.type = this.destinationForm.value.type;
