@@ -9,6 +9,8 @@ import { DatePipe } from '@angular/common';
 import {Source} from '../../Models/source';
 import {SourcesService} from '../../services/sources-service';
 import { CronOptions } from 'cron-editor/lib/CronOptions';
+import {ConfigDestinationService} from '../../services/configDestination-service';
+import {ConfigDestination} from '../../Models/configDestination';
 
 
 @Component({
@@ -32,7 +34,8 @@ export class ConfigCreatorComponent implements OnInit {
     compress_into_archive: [false],
     sources: this.fb.array([
       this.fb.control('')
-    ])
+    ]),
+    destinations: new FormArray([])
   });
 
   public cronExpression = '4 3 2 12 1/1 ? *';
@@ -62,9 +65,7 @@ export class ConfigCreatorComponent implements OnInit {
   pipe = new DatePipe('cs-CZ');
   date = Number(this.pipe.transform(Date.now(), 'MMddHHmmss'));
   sourceArr = this.configForm.value.sources;
-  Sources: Array<{
-    source: Source;
-  }>;
+  destinationArr = this.configForm.value.destinations;
 
   public data: Destination[] = [];
   // cronForm: any;
@@ -75,6 +76,7 @@ export class ConfigCreatorComponent implements OnInit {
 
   public config: Config = new Config();
   public source: Source = new Source();
+  public configDestination: ConfigDestination = new ConfigDestination();
 
 
   constructor(
@@ -82,8 +84,8 @@ export class ConfigCreatorComponent implements OnInit {
     private router: Router,
     private service: DestinationsService,
     private configService: ConfigsService,
-    public sourceService: SourcesService
-    // public cronGenerator: CronGeneratorComponent
+    public sourceService: SourcesService,
+    public configDestinationService: ConfigDestinationService
     ) { }
 
   addSource() {
@@ -114,11 +116,47 @@ export class ConfigCreatorComponent implements OnInit {
       });
 
     });
+
+    this.destinationArr = this.configForm.value.destinations;
+    this.destinationArr.forEach(value => {
+      this.configDestination = new ConfigDestination();
+      this.configDestination.destinationid = value;
+      this.configDestination.configid = this.config.id;
+      console.warn(this.configDestination);
+      this.configDestinationService.save(this.configDestination).subscribe(user => {
+        this.router.navigate([ 'configs/configs' ]);
+      });
+
+    });
+    console.warn(this.configForm);
   }
 
   ngOnInit(): void {
     this.service.findAll().subscribe(data => this.data = data);
     // this.cronForm = new FormControl('0 0 1/1 * *');
+  }
+
+  onCheckChange(event) {
+    const formArray: FormArray = this.configForm.get('destinations') as FormArray;
+
+    /* Selected */
+    if (event.target.checked) {
+      // Add a new control in the arrayForm
+      formArray.push(new FormControl(event.target.value));
+    } else {
+      // find the unselected element
+      let i = 0;
+
+      formArray.controls.forEach((ctrl: FormControl) => {
+        if (ctrl.value === event.target.value) {
+          // Remove the unselected element from the arrayForm
+          formArray.removeAt(i);
+          return;
+        }
+
+        i++;
+      });
+    }
   }
 
   public destinationSelected(destination: Destination): void {

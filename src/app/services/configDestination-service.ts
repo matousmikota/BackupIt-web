@@ -3,13 +3,13 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {SessionsService} from './sessions.service';
 import {catchError, Observable} from 'rxjs';
-import {Source} from '../Models/source';
+import {ConfigDestination} from '../Models/configDestination';
 import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
-export class SourcesService {
+export class ConfigDestinationService {
 
 
   constructor(private http: HttpClient,
@@ -25,8 +25,8 @@ export class SourcesService {
   }
 
 
-  public findAll(): Observable<Source[]> {
-    return this.http.get<Source[]>(environment.api + '/data/Source', this.options).pipe(
+  public findAll(): Observable<ConfigDestination[]> {
+    return this.http.get<ConfigDestination[]>(environment.api + '/data/DConfigs', this.options).pipe(
       catchError(err => {
         this.unauthenticated(err);
         throw new Error(err);
@@ -34,18 +34,12 @@ export class SourcesService {
     );
   }
 
-  public findById(id: number): Observable<Source> {
-    return this.http.get<Source>(environment.api + '/data/Source/' + id, this.options);
+  public findById(id: number): Observable<ConfigDestination> {
+    return this.http.get<ConfigDestination>(environment.api + '/data/DConfigs/' + id, this.options);
   }
 
-  public save(source: Source): Observable<Source> {
-    /*if (source.id) {
-      return this.http.put<Source>(environment.api + '/data/Source/' + source.id, source, this.options);
-
-    } else {
-      return this.http.post<Source>(environment.api + '/data/Source/', source, this.options);
-    }*/
-    return this.http.post<Source>(environment.api + '/data/Source/', source, this.options);
+  public save(configDestination: ConfigDestination): Observable<ConfigDestination> {
+    return this.http.post<ConfigDestination>(environment.api + '/data/DConfigs/', configDestination, this.options);
   }
 
   private unauthenticated(err: any): void {

@@ -22,6 +22,7 @@ export class DestinationsCheckboxListComponent implements OnInit {
 
   public destinationSelected(destination: Destination): void {
     this.selected.emit(destination);
+    console.warn(destination);
   }
 
 }

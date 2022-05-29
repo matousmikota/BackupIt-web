@@ -67,7 +67,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <app-destinations-checkbox-list [destinations]="data" (selected)="showDestination($event)"></app-destinations-checkbox-list>
+              <app-destinations-checkbox-list [destinations]="data" (selected)="showDestination($event)" (change)="onCheckChange($event)"></app-destinations-checkbox-list>
               <div formArrayName="sources" class="form-group-row">
                 <label class="col-md-3 col-form-label"><strong>Sources</strong></label>
                 <div class="col-md-12">
