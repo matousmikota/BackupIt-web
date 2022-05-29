@@ -6,6 +6,8 @@ import {DestinationsService} from '../../services/destinations-service';
 import {ConfigsService} from '../../services/configs-service';
 import {Config} from '../../Models/config';
 import { DatePipe } from '@angular/common';
+import {Source} from '../../Models/source';
+import {SourcesService} from '../../services/sources-service';
 
 
 @Component({
@@ -34,6 +36,10 @@ export class ConfigCreatorComponent implements OnInit {
 
   pipe = new DatePipe('cs-CZ');
   date = Number(this.pipe.transform(Date.now(), 'MMddHHmmss'));
+  sourceArr = this.configForm.value.sources;
+  Sources: Array<{
+    source: Source;
+  }>;
 
   public data: Destination[] = [];
   // cronForm: any;
@@ -43,7 +49,7 @@ export class ConfigCreatorComponent implements OnInit {
   }
 
   public config: Config = new Config();
-
+  public source: Source = new Source();
   public id: number = 411;
   /*
  public name: string = 'ICT_114';
@@ -58,7 +64,8 @@ export class ConfigCreatorComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private service: DestinationsService,
-    private configService: ConfigsService
+    private configService: ConfigsService,
+    public sourceService: SourcesService
     ) { }
 
   addSource() {
@@ -80,6 +87,20 @@ export class ConfigCreatorComponent implements OnInit {
 
     this.configService.save(this.config).subscribe(user => {
       this.router.navigate([ 'configs/configs' ]);
+    });
+
+    this.sourceArr = this.configForm.value.sources;
+    console.warn(this.sourceArr);
+    this.sourceArr.forEach(value => {
+      this.source = new Source();
+      this.source.config_id = this.config.id;
+      this.source.path = value;
+      // this.sourceService.save(this.source);
+
+      this.sourceService.save(this.source).subscribe(user => {
+        this.router.navigate([ 'configs/configs' ]);
+      });
+
     });
   }
 
