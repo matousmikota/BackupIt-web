@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
 import { CronOptions } from 'cron-editor/lib/CronOptions';
 
 @Component({
@@ -32,4 +32,8 @@ export class CronGeneratorComponent {
     removeSeconds: false,
     removeYears: false
   };
+  get backup_cron() {
+    return this.cronExpression;
+  }
+  @Output() hero!: 'hiuwheruiwh';
 }

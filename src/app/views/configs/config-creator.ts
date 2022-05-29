@@ -8,6 +8,7 @@ import {Config} from '../../Models/config';
 import { DatePipe } from '@angular/common';
 import {Source} from '../../Models/source';
 import {SourcesService} from '../../services/sources-service';
+import { CronOptions } from 'cron-editor/lib/CronOptions';
 
 
 @Component({
@@ -34,6 +35,30 @@ export class ConfigCreatorComponent implements OnInit {
     ])
   });
 
+  public cronExpression = '4 3 2 12 1/1 ? *';
+  public isCronDisabled = false;
+  public cronOptions: CronOptions = {
+    formInputClass: 'form-control cron-editor-input',
+    formSelectClass: 'form-control cron-editor-select',
+    formRadioClass: 'cron-editor-radio',
+    formCheckboxClass: 'cron-editor-checkbox',
+
+    defaultTime: '10:00:00',
+    use24HourTime: true,
+
+    hideMinutesTab: false,
+    hideHourlyTab: false,
+    hideDailyTab: false,
+    hideWeeklyTab: false,
+    hideMonthlyTab: false,
+    hideYearlyTab: false,
+    hideAdvancedTab: false,
+
+    hideSeconds: false,
+    removeSeconds: false,
+    removeYears: false
+  };
+
   pipe = new DatePipe('cs-CZ');
   date = Number(this.pipe.transform(Date.now(), 'MMddHHmmss'));
   sourceArr = this.configForm.value.sources;
@@ -50,15 +75,7 @@ export class ConfigCreatorComponent implements OnInit {
 
   public config: Config = new Config();
   public source: Source = new Source();
-  public id: number = 411;
-  /*
- public name: string = 'ICT_114';
- public type: string = 'full';
- public backup_cron: string = '20 * * * *';
- public max_count: number = 3;
- public max_size: number = 4;
- public compress_into_archive: boolean = false;
-*/
+
 
   constructor(
     private fb: FormBuilder,
@@ -66,6 +83,7 @@ export class ConfigCreatorComponent implements OnInit {
     private service: DestinationsService,
     private configService: ConfigsService,
     public sourceService: SourcesService
+    // public cronGenerator: CronGeneratorComponent
     ) { }
 
   addSource() {
@@ -73,29 +91,23 @@ export class ConfigCreatorComponent implements OnInit {
   }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.configForm.value);
-    // Object.assign(this.config, this.configForm.value);
     this.config.id = this.date;
     this.config.name = this.configForm.value.name;
     this.config.type = this.configForm.value.type;
-    this.config.backup_cron = this.configForm.value.backup_cron;
+    this.config.backup_cron = this.cronExpression;
     this.config.max_count = this.configForm.value.max_count;
     this.config.compress_into_archive = this.configForm.value.compress_into_archive;
     this.config.type = this.configForm.value.type;
-    console.warn(this.config);
 
     this.configService.save(this.config).subscribe(user => {
       this.router.navigate([ 'configs/configs' ]);
     });
 
     this.sourceArr = this.configForm.value.sources;
-    console.warn(this.sourceArr);
     this.sourceArr.forEach(value => {
       this.source = new Source();
       this.source.config_id = this.config.id;
       this.source.path = value;
-      // this.sourceService.save(this.source);
 
       this.sourceService.save(this.source).subscribe(user => {
         this.router.navigate([ 'configs/configs' ]);
