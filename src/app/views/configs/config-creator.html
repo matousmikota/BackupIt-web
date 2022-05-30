@@ -18,7 +18,7 @@
       <div class="card-body">
         <form [formGroup]="configForm" (ngSubmit)="onSubmit()" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group row">
                 <label class="col-md-3 col-form-label" for="name"><strong>Name</strong></label>
                 <div class="col-md-9">
@@ -45,8 +45,8 @@
               <div class="form-group row">
                 <label class="col-md-3 col-form-label"><strong>Config Scheduler</strong></label>
                 <div class="col-md-9 col-form-label">
-                  <!--app-cron-generator id="backup_cron" formControlName="backup_cron" value="name" name="backup_cron" class="form-control"></app-cron-generator-->
-                  <cron-editor [(cron)]="cronExpression" [disabled]="isCronDisabled" [(options)]="cronOptions"></cron-editor>
+                  <app-cron-generator></app-cron-generator>
+                  <!--cron-editor [(cron)]="cronExpression" [disabled]="isCronDisabled" [(options)]="cronOptions"></cron-editor-->
                   <!--p>{{cronExpression}}</p-->
                 </div>
               </div>
@@ -66,7 +66,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <app-destinations-checkbox-list [destinations]="data" (selected)="showDestination($event)" (change)="onCheckChange($event)"></app-destinations-checkbox-list>
               <div formArrayName="sources" class="form-group-row">
                 <label class="col-md-3 col-form-label"><strong>Sources</strong></label>
