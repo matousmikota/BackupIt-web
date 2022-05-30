@@ -14,7 +14,8 @@ import {ConfigDestination} from '../../Models/configDestination';
 
 
 @Component({
-  templateUrl: 'config-creator.html'
+  templateUrl: 'config-creator.html',
+  styleUrls: ['config-creator.scss']
 })
 export class ConfigCreatorComponent implements OnInit {
 
