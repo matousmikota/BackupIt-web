@@ -5,6 +5,7 @@ import {DestinationsComponent} from './destinations.component';
 import {ConfigCreatorComponent} from './config-creator';
 import {ConfigsEditComponent} from './configs-edit.component';
 import {DestinationsEditComponent} from './destinations-edit.component';
+import {ConfigAssignComponent} from './config-assign';
 
 const routes: Routes = [
   {
@@ -43,6 +44,13 @@ const routes: Routes = [
         component: ConfigCreatorComponent,
         data: {
           title: 'Config Creator'
+        }
+      },
+      {
+        path: 'config-assign',
+        component: ConfigAssignComponent,
+        data: {
+          title: 'Assign clients to configs'
         }
       },
       {

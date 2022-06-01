@@ -168,6 +168,11 @@ export class ConfigCreatorComponent implements OnInit {
     this.router.navigate(['destination', destination.id]);
   }
 
+  public redirectTo(uri: string) {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+      this.router.navigate([uri]));
+  }
+
 }
 
 

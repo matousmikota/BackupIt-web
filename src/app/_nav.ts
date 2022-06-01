@@ -21,6 +21,11 @@ export const navItems: INavData[] = [
     icon: 'icon-wrench'
   },
   {
+    name: 'Config assigning',
+    url: '/configs/config-assign',
+    icon: 'icon-wrench'
+  },
+  {
     name: 'Admins',
     url: '/admins',
     icon: 'icon-badge',

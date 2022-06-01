@@ -1,0 +1,77 @@
+<div class="animated fadeIn">
+  <div>
+    <div>
+      <div>
+        <div class="card">
+          <div class="card-header">
+            <strong>Assign clients to configs</strong>
+          </div>
+          <div class="card-body"
+               (collapsed)="collapsed($event)"
+               (expanded)="expanded($event)"
+               [collapse]="isCollapsedForm">
+            <form [formGroup]="configAssignForm" (ngSubmit)="onSubmit()" action="" method="post" enctype="multipart/form-data" class="form-vertical">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <!--label class="col-md-3 col-form-label" for="config"><strong>Config</strong></label-->
+                  <label class="col-md-3 col-form-label"><strong>Config</strong></label>
+                  <!--select id="config" name="config" formControlName="config" class="form-control">
+
+                  </select-->
+                  <app-configs-select-list [configs]="configData" (change)="CheckSelect($event)" ></app-configs-select-list>
+                </div>
+                <!--app-configs-select-list [configs]="configData" (selected)="showConfig($event)" class="col-md-6"></app-configs-select-list-->
+                <app-clients-checkbox-list [clients]="clientData" (change)="onCheckChange($event)" class="col-md-6"></app-clients-checkbox-list>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer">
+            <div class="row pull-right">
+              <div class="col-md-auto">
+                <button type="submit" (click)="onSubmit()" class="btn btn-primary btn-sm"><i class="fa fa-dot-circle-o"></i> Submit</button>
+              </div>
+              <div class="col-md-auto">
+                <button type="reset" (click)="redirectTo('configs/config-assign')" class="btn btn-outline-primary btn-sm"><i class="fa fa-ban"></i> Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--div>
+    <div class="card">
+      <div class="card-header">
+        <strong>Destinations</strong>
+      </div>
+      <div class="card-body"
+           (collapsed)="collapsed($event)"
+           (expanded)="expanded($event)"
+           [collapse]="isCollapsedTable">
+        <p>/TODO Make a app-config-assign-table which shows what clients each config has.</p>
+        <app-destinations-table [destinations]="data" (selected)="showDestination($event)"></app-destinations-table>
+        <ul class="pagination mt-2">
+          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="row pull-right">
+          <div class="col-md-auto">
+            <button type="button" class="btn btn-primary"
+                    (click)="isCollapsedTable = !isCollapsedTable">Open/Close Table
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div-->
+</div>

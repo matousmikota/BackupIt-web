@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label class="col-md-2 col-form-label"><strong>Clients</strong></label>
+  <div *ngFor="let client of clients" class="col-md-auto col-form-label">
+    <div class="col-md-auto form-check checkbox">
+      <input class="form-check-input" type="checkbox" value="{{client.id}}" id="checkbox{{client.id}}">
+      <label class="form-check-label" for="checkbox{{client.id}}">
+        <strong>{{client.device_name}}</strong> (MAC: {{client.mac_address}})
+      </label>
+    </div>
+  </div>
+</div>

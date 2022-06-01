@@ -1,0 +1,9 @@
+<!--div class="form-group">
+  <label class="col-md-3 col-form-label" for="config"><strong>Config</strong></label>
+  <select id="config" name="config" formControlName="config" class="form-control">
+    <option *ngFor="let config of configs" value="{{config.id}}">{{config.name}}</option>
+  </select>
+</div-->
+<select id="config" name="config" formControlName="config" class="form-control">
+  <option *ngFor="let config of configs" value="{{config.id}}">{{config.name}}</option>
+</select>

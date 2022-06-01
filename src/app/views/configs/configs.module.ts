@@ -25,6 +25,9 @@ import {Destination} from '../../Models/destination';
 // import {CronEditorModule} from 'ngx-cron-editor';
 import { CronEditorModule } from 'cron-editor';
 import { CronGeneratorComponent} from '../../components/cron-generator/cron-generator.component';
+import {ConfigAssignComponent} from './config-assign';
+import {ClientsCheckboxListComponent} from '../../components/clients-checkbox-list/clients-checkbox-list.component';
+import {ConfigsSelectListComponent} from '../../components/configs-select-list/configs-select-list.component';
 
 
 @NgModule({
@@ -50,7 +53,10 @@ import { CronGeneratorComponent} from '../../components/cron-generator/cron-gene
     ConfigsEditComponent,
     DestinationsTableComponent,
     DestinationsEditComponent,
-    CronGeneratorComponent
+    CronGeneratorComponent,
+    ConfigAssignComponent,
+    ClientsCheckboxListComponent,
+    ConfigsSelectListComponent
   ]
 })
 export class ConfigsModule { }

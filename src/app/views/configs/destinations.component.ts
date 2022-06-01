@@ -58,6 +58,8 @@ export class DestinationsComponent implements OnInit {
     this.service.save(this.destination).subscribe(user => {
       this.router.navigate([ 'configs/destinations' ]);
     });
+
+    this.redirectTo('configs/destinations');
   }
 
   ngOnInit(): void {
@@ -66,6 +68,11 @@ export class DestinationsComponent implements OnInit {
 
   public showDestination(destination: Destination): void {
     this.router.navigate(['configs/destinations', destination.id]);
+  }
+
+  public redirectTo(uri: string) {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+      this.router.navigate([uri]));
   }
 
 }
