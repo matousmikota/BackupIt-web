@@ -13,6 +13,8 @@ import {ConfigDestinationService} from '../../services/configDestination-service
 import {ConfigDestination} from '../../Models/configDestination';
 import {Client} from '../../Models/client';
 import {ClientsService} from '../../services/clients-service';
+import {ClientConfig} from '../../Models/clientConfig';
+import {ClientConfigService} from '../../services/clientConfig-service';
 
 
 @Component({
@@ -28,13 +30,14 @@ export class ConfigAssignComponent implements OnInit {
   public clientData: Client[] = [];
   public configData: Config[] = [];
 
+  clientsArr = this.configAssignForm.value.clients;
+  public clientConfig: ClientConfig = new ClientConfig();
+
   constructor(
     public fb: FormBuilder,
     public router: Router,
-    public destinationsService: DestinationsService,
     public configsService: ConfigsService,
-    public sourcesService: SourcesService,
-    public configDestinationService: ConfigDestinationService,
+    public clientConfigService: ClientConfigService,
     public clientsService: ClientsService
   ) { }
 
@@ -50,7 +53,17 @@ export class ConfigAssignComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.clientsArr = this.configAssignForm.value.clients;
+    this.clientsArr.forEach(value => {
+      this.clientConfig = new ClientConfig();
+      this.clientConfig.client_id = value;
+      this.clientConfig.config_id = this.configAssignForm.value.config;
+      console.warn(this.clientConfig);
+      this.clientConfigService.save(this.clientConfig).subscribe(user => {
+        this.router.navigate([ 'configs/config-assign' ]);
+      });
+      this.redirectTo('configs/config-assign');
+    });
   }
 
   onCheckChange(event) {
