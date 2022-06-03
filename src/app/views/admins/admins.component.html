@@ -8,7 +8,7 @@
            (collapsed)="collapsed($event)"
            (expanded)="expanded($event)"
            [collapse]="isCollapsed">
-        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <form [formGroup]="adminForm" (ngSubmit)="onSubmit()" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="name"><strong>Name</strong></label>
             <div class="col-md-9">
@@ -262,10 +262,10 @@
       <div class="card-footer">
         <div class="row pull-right">
           <div class="col-md-auto">
-            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+            <button type="submit" (click)="onSubmit()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
           </div>
           <div class="col-md-auto">
-            <button type="reset" class="btn btn-sm btn-outline-primary"><i class="fa fa-ban"></i> Reset</button>
+            <button type="reset" (click)="redirectTo('admins')" class="btn btn-sm btn-outline-primary"><i class="fa fa-ban"></i> Reset</button>
           </div>
           <div class="col-md-auto">
             <button type="button" class="btn btn-primary"

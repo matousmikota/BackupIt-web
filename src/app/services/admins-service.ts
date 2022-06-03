@@ -5,6 +5,7 @@ import {catchError, Observable, of} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {SessionsService} from './sessions.service';
 import {Router} from '@angular/router';
+import {Destination} from '../Models/destination';
 
 @Injectable({
   providedIn: 'root',
@@ -106,13 +107,15 @@ export class AdminsService {
   }
 
   public save(admin: Admin): Observable<Admin> {
-    if (admin.id) {
+   /* if (admin.id) {
       return this.http.put<Admin>(environment.api + '/data/Admin/' + admin.id, admin, this.options);
 
     } else {
       return this.http.post<Admin>(environment.api + '/data/Admin/', admin, this.options);
-    }
+    }*/
+    return this.http.post<Admin>(environment.api + '/data/Admin/', admin, this.options);
   }
+
 
   private unauthenticated(err: any): void {
     if (err.status === 401) {
