@@ -3,12 +3,14 @@ import {Admin} from '../../Models/admin';
 import {Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {AdminsService} from '../../services/admins-service';
+import {CronOptions} from 'cron-editor/lib/CronOptions';
 
 
 // import { myApp } from 'angular-cron-gen';
 
 @Component({
-  templateUrl: 'admins.component.html'
+  templateUrl: 'admins.component.html',
+  styleUrls: ['admins.component.scss']
 })
 
 
@@ -21,10 +23,34 @@ export class AdminsComponent implements OnInit {
     name: [''],
     login: [''],
     password: [''],
-    send_report_email: [''],
+    send_report_email: [false],
     email_cron: ['']
     }
   );
+
+  public cronExpression = '0/17 * 1/1 * ?';
+  public isCronDisabled = false;
+  public cronOptions: CronOptions = {
+    formInputClass: 'form-control cron-editor-input',
+    formSelectClass: 'form-control cron-editor-select',
+    formRadioClass: 'cron-editor-radio',
+    formCheckboxClass: 'cron-editor-checkbox',
+
+    defaultTime: '10:00:00',
+    use24HourTime: true,
+
+    hideMinutesTab: false,
+    hideHourlyTab: false,
+    hideDailyTab: false,
+    hideWeeklyTab: false,
+    hideMonthlyTab: false,
+    hideYearlyTab: true,
+    hideAdvancedTab: true,
+
+    hideSeconds: true,
+    removeSeconds: true,
+    removeYears: true
+  };
 
   public admin: Admin = new Admin();
 
@@ -47,9 +73,13 @@ export class AdminsComponent implements OnInit {
   onSubmit() {
     this.admin.name = this.adminForm.value.name;
     this.admin.login = this.adminForm.value.login;
-    this.admin.email_cron = this.adminForm.value.email_cron;
     this.admin.password = this.adminForm.value.password;
     this.admin.send_report_email = this.adminForm.value.send_report_email;
+    this.cronExpression = this.cronExpression.replace('0/', '*/');
+    this.cronExpression = this.cronExpression.replace('1/', '');
+    this.cronExpression = this.cronExpression.replace('?', '*');
+    this.cronExpression = this.cronExpression.replace('1 *', '* *');
+    this.admin.email_cron = this.cronExpression;
 
     console.warn(this.admin);
 

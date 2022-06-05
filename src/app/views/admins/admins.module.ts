@@ -6,6 +6,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AdminsComponent } from './admins.component';
+import { CronEditorModule } from 'cron-editor';
 // Configs routing
 import { AdminsRoutingModule } from './admins-routing.module';
 import {TabsModule} from 'ngx-bootstrap/tabs';
@@ -24,7 +25,8 @@ import {AdminsEditComponent} from './admins-edit.component';
         BsDropdownModule,
         ButtonsModule,
         TabsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CronEditorModule
     ],
   declarations: [
     AdminsComponent,
