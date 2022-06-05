@@ -34,10 +34,10 @@ export const navItems: INavData[] = [
     name: 'Clients',
     url: '/clients',
     icon: 'icon-people',
-  },
+  }/*,
   {
     name: 'Logs',
-    url: '/logs',
+    url: '/login',
     icon: 'icon-list',
-  }
+  }*/
 ];
