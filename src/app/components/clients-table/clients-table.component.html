@@ -28,7 +28,7 @@
     <td>{{ client.last_seen }}</td>
     <td>
       <button type="reset" class="btn btn-sm btn-primary" (click)="clientSelected(client)"><i class="icon-note"></i></button>
-      <button type="reset" class="btn btn-sm btn-danger"><i class="icon-close"></i></button>
+      <button type="reset" class="btn btn-sm btn-danger" (click)="deleteById(client.id)"><i class="icon-close"></i></button>
     </td>
   </tr>
   </tbody>

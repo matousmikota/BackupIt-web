@@ -5,55 +5,12 @@ import {Router} from '@angular/router';
 import {SessionsService} from './sessions.service';
 import {catchError, Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
+import {Config} from '../Models/config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ClientsService {
-  private data: Client[] = [
-    { id: 0,
-      device_name: 'DESKTOP-15E2U5T',
-      mac_address: '1A-CA-88-03-61-43',
-      ipv4_address: '18.234.12.122',
-      last_backup: new Date(),
-      last_seen: new Date()
-    },
-    { id: 1,
-      device_name: 'DESKTOP-25E2U5T',
-      mac_address: '2A-CA-88-03-61-43',
-      ipv4_address: '28.234.12.122',
-      last_backup: new Date(),
-      last_seen: new Date()
-    },
-    { id: 2,
-      device_name: 'DESKTOP-35E2U5T',
-      mac_address: '3A-CA-88-03-61-43',
-      ipv4_address: '38.234.12.122',
-      last_backup: new Date(),
-      last_seen: new Date()
-    },
-    { id: 3,
-      device_name: 'DESKTOP-45E2U5T',
-      mac_address: '4A-CA-88-03-61-43',
-      ipv4_address: '28.234.12.122',
-      last_backup: new Date(),
-      last_seen: new Date()
-    },
-    { id: 4,
-      device_name: 'DESKTOP-55E2U5T',
-      mac_address: '5A-CA-88-03-61-43',
-      ipv4_address: '28.234.12.122',
-      last_backup: new Date(),
-      last_seen: new Date()
-    },
-    { id: 5,
-      device_name: 'DESKTOP-65E2U5T',
-      mac_address: '6A-CA-88-03-61-43',
-      ipv4_address: '28.234.12.122',
-      last_backup: new Date(),
-      last_seen: new Date()
-    }
-  ];
 
   constructor(private http: HttpClient,
               private router: Router,
@@ -79,6 +36,10 @@ export class ClientsService {
 
   public findById(id: number): Observable<Client> {
     return this.http.get<Client>(environment.api + '/data/Client/' + id, this.options);
+  }
+
+  public deleteById(id: number): Observable<Client> {
+    return this.http.delete<Client>(environment.api + '/data/Client/' + id, this.options);
   }
 
   public save(client: Client): Observable<Client> {

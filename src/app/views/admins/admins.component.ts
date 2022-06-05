@@ -24,11 +24,12 @@ export class AdminsComponent implements OnInit {
     login: [''],
     password: [''],
     send_report_email: [false],
-    email_cron: ['']
+    email_cron: [''],
+    email: ['']
     }
   );
 
-  public cronExpression = '0/17 * 1/1 * ?';
+  public cronExpression = '0/10 * 1/1 * ?';
   public isCronDisabled = false;
   public cronOptions: CronOptions = {
     formInputClass: 'form-control cron-editor-input',
@@ -75,13 +76,12 @@ export class AdminsComponent implements OnInit {
     this.admin.login = this.adminForm.value.login;
     this.admin.password = this.adminForm.value.password;
     this.admin.send_report_email = this.adminForm.value.send_report_email;
+    this.admin.email = this.adminForm.value.email;
     this.cronExpression = this.cronExpression.replace('0/', '*/');
-    this.cronExpression = this.cronExpression.replace('1/', '');
+    this.cronExpression = this.cronExpression.replace('1/1 *', '* *');
     this.cronExpression = this.cronExpression.replace('?', '*');
-    this.cronExpression = this.cronExpression.replace('1 *', '* *');
+    this.cronExpression = this.cronExpression.replace('*/0 * * * *', '*/1 * * * *');
     this.admin.email_cron = this.cronExpression;
-
-    console.warn(this.admin);
 
     this.service.save(this.admin).subscribe( user => {
       this.router.navigate(['admins']);

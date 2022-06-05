@@ -39,7 +39,7 @@ export class ConfigCreatorComponent implements OnInit {
     destinations: new FormArray([])
   });
 
-  public cronExpression = '0/17 * 1/1 * ?';
+  public cronExpression = '0/10 * 1/1 * ?';
   public isCronDisabled = false;
   public cronOptions: CronOptions = {
     formInputClass: 'form-control cron-editor-input',
@@ -98,10 +98,9 @@ export class ConfigCreatorComponent implements OnInit {
     this.config.name = this.configForm.value.name;
     this.config.type = this.configForm.value.type;
     this.cronExpression = this.cronExpression.replace('0/', '*/');
-    this.cronExpression = this.cronExpression.replace('1/', '');
+    this.cronExpression = this.cronExpression.replace('1/1 *', '* *');
     this.cronExpression = this.cronExpression.replace('?', '*');
-    this.cronExpression = this.cronExpression.replace('1 *', '* *');
-    console.warn(this.cronExpression);
+    this.cronExpression = this.cronExpression.replace('*/0 * * * *', '*/1 * * * *');
     this.config.backup_cron = this.cronExpression;
     this.config.max_count = this.configForm.value.max_count;
     this.config.compress_into_archive = this.configForm.value.compress_into_archive;
@@ -134,7 +133,6 @@ export class ConfigCreatorComponent implements OnInit {
       });
 
     });
-    console.warn(this.configForm);
   }
 
   ngOnInit(): void {

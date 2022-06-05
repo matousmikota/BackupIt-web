@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {SessionsService} from './sessions.service';
 import {catchError, Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
+import {Config} from '../Models/config';
 
 
 @Injectable({
@@ -88,6 +89,10 @@ export class DestinationsService {
 
   public findById(id: number): Observable<Destination> {
     return this.http.get<Destination>(environment.api + '/data/Destinations/' + id, this.options);
+  }
+
+  public deleteById(id: number): Observable<Destination> {
+    return this.http.delete<Destination>(environment.api + '/data/Destinations/' + id, this.options);
   }
 
   public save(destination: Destination): Observable<Destination> {

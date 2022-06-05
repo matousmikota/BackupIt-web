@@ -88,6 +88,10 @@ export class ConfigsService {
     return this.http.get<Config>(environment.api + '/data/Configs/' + id, this.options);
   }
 
+  public deleteById(id: number): Observable<Config> {
+    return this.http.delete<Config>(environment.api + '/data/Configs/' + id, this.options);
+  }
+
   public save(config: Config): Observable<Config> {
     /*if (config.id) {
       return this.http.put<Config>(environment.api + '/data/Configs/' + config.id, config, this.options);

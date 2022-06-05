@@ -5,4 +5,5 @@ export class Admin {
   public password: string = '';
   public send_report_email: boolean = true;
   public email_cron: string = '';
+  public email: string = '';
 }

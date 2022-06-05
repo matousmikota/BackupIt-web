@@ -6,63 +6,13 @@ import {environment} from '../../environments/environment';
 import {SessionsService} from './sessions.service';
 import {Router} from '@angular/router';
 import {Destination} from '../Models/destination';
+import {Config} from '../Models/config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdminsService {
 
-  private data: Admin[] = [
-    { id: 0,
-      name: 'Jana',
-      login: 'admin',
-      password: '12345678',
-      send_report_email: true,
-      email_cron: '0 23 ? * MON-FRI'
-    },
-    { id: 1,
-      name: 'Jana',
-      login: 'admin',
-      password: '12345678',
-      send_report_email: true,
-      email_cron: '0 23 ? * MON-FRI'
-    },
-    { id: 2,
-      name: 'Jana',
-      login: 'admin',
-      password: '12345678',
-      send_report_email: true,
-      email_cron: '0 23 ? * MON-FRI'
-    },
-    { id: 3,
-      name: 'Jana',
-      login: 'admin',
-      password: '12345678',
-      send_report_email: true,
-      email_cron: '0 23 ? * MON-FRI'
-    },
-    { id: 4,
-      name: 'Jana',
-      login: 'admin',
-      password: '12345678',
-      send_report_email: true,
-      email_cron: '0 23 ? * MON-FRI'
-    },
-    { id: 5,
-      name: 'Jana',
-      login: 'admin',
-      password: '12345678',
-      send_report_email: true,
-      email_cron: '0 23 ? * MON-FRI'
-    },
-    { id: 6,
-      name: 'Jana',
-      login: 'admin',
-      password: '12345678',
-      send_report_email: true,
-      email_cron: '0 23 ? * MON-FRI'
-    },
-  ];
 
   /*
   public findAll(): Admin[] {
@@ -104,6 +54,10 @@ export class AdminsService {
 
   public findById(id: number): Observable<Admin> {
     return this.http.get<Admin>(environment.api + '/data/Admin/' + id, this.options);
+  }
+
+  public deleteById(id: number): Observable<Admin> {
+    return this.http.delete<Admin>(environment.api + '/data/Admin/' + id, this.options);
   }
 
   public save(admin: Admin): Observable<Admin> {

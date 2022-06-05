@@ -1,5 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Client} from '../../Models/client';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {ClientsService} from '../../services/clients-service';
 
 
 @Component({
@@ -15,7 +18,10 @@ export class ClientsTableComponent implements OnInit {
   @Output()
   public selected: EventEmitter<Client> = new EventEmitter<Client>();
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private service: ClientsService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -24,4 +30,14 @@ export class ClientsTableComponent implements OnInit {
     this.selected.emit(client);
   }
 
+  public deleteById(id: number): void {
+    this.service.deleteById(id).subscribe( user => {
+      this.redirectTo('clients');
+    });
+  }
+
+  public redirectTo(uri: string) {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+      this.router.navigate([uri]));
+  }
 }
