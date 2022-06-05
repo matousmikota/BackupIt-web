@@ -9,8 +9,8 @@ import { DatePipe } from '@angular/common';
 import {Source} from '../../Models/source';
 import {SourcesService} from '../../services/sources-service';
 import { CronOptions } from 'cron-editor/lib/CronOptions';
-import {ConfigDestinationService} from '../../services/configDestination-service';
-import {ConfigDestination} from '../../Models/configDestination';
+import {DestinationConfigService} from '../../services/destinationConfig-service';
+import {DestinationConfig} from '../../Models/destinationConfig';
 
 
 @Component({
@@ -39,7 +39,7 @@ export class ConfigCreatorComponent implements OnInit {
     destinations: new FormArray([])
   });
 
-  public cronExpression = '4 3 2 12 1/1 ? *';
+  public cronExpression = '0/17 * 1/1 * ?';
   public isCronDisabled = false;
   public cronOptions: CronOptions = {
     formInputClass: 'form-control cron-editor-input',
@@ -55,12 +55,12 @@ export class ConfigCreatorComponent implements OnInit {
     hideDailyTab: false,
     hideWeeklyTab: false,
     hideMonthlyTab: false,
-    hideYearlyTab: false,
-    hideAdvancedTab: false,
+    hideYearlyTab: true,
+    hideAdvancedTab: true,
 
-    hideSeconds: false,
-    removeSeconds: false,
-    removeYears: false
+    hideSeconds: true,
+    removeSeconds: true,
+    removeYears: true
   };
 
   pipe = new DatePipe('cs-CZ');
@@ -77,7 +77,7 @@ export class ConfigCreatorComponent implements OnInit {
 
   public config: Config = new Config();
   public source: Source = new Source();
-  public configDestination: ConfigDestination = new ConfigDestination();
+  public configDestination: DestinationConfig = new DestinationConfig();
 
 
   constructor(
@@ -86,7 +86,7 @@ export class ConfigCreatorComponent implements OnInit {
     private service: DestinationsService,
     private configService: ConfigsService,
     public sourceService: SourcesService,
-    public configDestinationService: ConfigDestinationService
+    public configDestinationService: DestinationConfigService
     ) { }
 
   addSource() {
@@ -97,6 +97,11 @@ export class ConfigCreatorComponent implements OnInit {
     this.config.id = this.date;
     this.config.name = this.configForm.value.name;
     this.config.type = this.configForm.value.type;
+    this.cronExpression = this.cronExpression.replace('0/', '*/');
+    this.cronExpression = this.cronExpression.replace('1/', '');
+    this.cronExpression = this.cronExpression.replace('?', '*');
+    this.cronExpression = this.cronExpression.replace('1 *', '* *');
+    console.warn(this.cronExpression);
     this.config.backup_cron = this.cronExpression;
     this.config.max_count = this.configForm.value.max_count;
     this.config.compress_into_archive = this.configForm.value.compress_into_archive;
@@ -120,7 +125,7 @@ export class ConfigCreatorComponent implements OnInit {
 
     this.destinationArr = this.configForm.value.destinations;
     this.destinationArr.forEach(value => {
-      this.configDestination = new ConfigDestination();
+      this.configDestination = new DestinationConfig();
       this.configDestination.destinationid = value;
       this.configDestination.configid = this.config.id;
       console.warn(this.configDestination);

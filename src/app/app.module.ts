@@ -7,7 +7,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import {HttpClientModule} from '@angular/common/http';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
 import { CronEditorModule } from 'cron-editor';
 
@@ -59,6 +59,8 @@ function tokenGetter() {
 
 @NgModule({
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CronEditorModule,
     BrowserModule,
     BrowserAnimationsModule,
